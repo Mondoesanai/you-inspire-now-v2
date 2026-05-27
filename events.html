@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — You Inspire Now</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#080808;color:#fff;overflow-x:hidden;cursor:none;}
+@media(hover:none){body{cursor:auto;}}
+:root{--teal:#00E8C8;--pink:#FF2D9E;--pu:#8B2FFF;--black:#080808;--card:#111111;--border:rgba(255,255,255,0.07);--muted:rgba(255,255,255,0.38);}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.028;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+#cursor{position:fixed;pointer-events:none;z-index:100001;font-size:42px;line-height:1;user-select:none;transform:translate(-6px,-32px) rotate(-15deg);transition:font-size 0.15s ease,transform 0.15s ease;filter:drop-shadow(0 2px 8px rgba(0,232,200,0.5));}
+#cursor.hov{font-size:54px;transform:translate(-6px,-40px) rotate(-20deg);}
+@media(hover:none){#cursor{display:none;}}
+.hero-top-shade{position:absolute;top:0;left:0;right:0;height:220px;background:linear-gradient(to bottom,rgba(8,8,8,0.85) 0%,transparent 100%);z-index:1;pointer-events:none;}
+.splat-wrap{position:absolute;pointer-events:none;}
+.blob{position:absolute;border-radius:71% 29% 76% 24% / 42% 68% 32% 58%;filter:blur(80px);pointer-events:none;animation:blob-drift var(--bd,14s) ease-in-out infinite alternate var(--bdel,0s);}
+.blob-teal{background:rgba(0,232,200,0.22);}
+.blob-pink{background:rgba(255,45,158,0.20);}
+.blob-pu{background:rgba(139,47,255,0.18);}
+@keyframes blob-drift{from{transform:translate(0,0) scale(1);border-radius:71% 29% 76% 24% / 42% 68% 32% 58%;}to{transform:translate(var(--btx,30px),var(--bty,-20px)) scale(var(--bs,1.12));border-radius:42% 58% 31% 69% / 70% 35% 65% 30%;}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-36px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal-left.in{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(36px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal-right.in{opacity:1;transform:translateX(0);}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0.85rem 2.5rem;background:rgba(8,8,8,0.55);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.04);transition:background 0.4s,box-shadow 0.4s;}
+#nav.scrolled{background:rgba(8,8,8,0.96);backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(255,255,255,0.05);}
+.nav-in{max-width:1340px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:0.65rem;text-decoration:none;}.nav-logo img{height:50px;display:block;filter:invert(1);mix-blend-mode:screen;}
+.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:#fff;letter-spacing:0.1em;line-height:1;white-space:nowrap;}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-a{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.42);text-decoration:none;transition:color 0.2s;position:relative;}
+.nav-a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--teal);transition:width 0.25s;}
+.nav-a:hover,.nav-a.active{color:#fff;}.nav-a:hover::after,.nav-a.active::after{width:100%;}
+.nav-pill{padding:0.45rem 1.3rem;background:var(--teal);color:#080808;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:100px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 20px rgba(0,232,200,0.35);}
+.nav-pill:hover{transform:scale(1.07);box-shadow:0 0 32px rgba(0,232,200,0.55);}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;}
+
+/* HERO */
+#hero{min-height:88vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding-top:110px;padding-bottom:6rem;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;filter:brightness(0.22) saturate(0.65);transform:scale(1.04);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#080808 0%,rgba(8,8,8,0.65) 40%,rgba(8,8,8,0.15) 100%);}
+.hero-content{position:relative;z-index:2;max-width:1340px;margin:0 auto;padding:0 2.5rem;width:100%;}
+.hero-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,45,158,0.9);display:inline-flex;align-items:center;gap:0.7rem;margin-bottom:2rem;}
+.hero-tag::before{content:'';width:28px;height:1.5px;background:var(--pink);}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,12vw,11rem);line-height:0.88;color:#fff;margin-bottom:1.5rem;}
+.hero-h1 .pk{color:var(--pink);}
+.hero-h1 .tl{color:var(--teal);}
+.hero-sub{font-size:1.12rem;color:rgba(255,255,255,0.45);line-height:1.9;max-width:520px;}
+
+/* ADVENTURE ODYSSEY — FEATURED */
+#odyssey{padding:0;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:stretch;}
+.od-photo{position:absolute;inset:0;background:url('images/women-1.jpg') center 20%/cover no-repeat;filter:brightness(0.32) saturate(0.8);}
+.od-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(8,8,8,0.97) 42%,rgba(8,8,8,0.2) 100%);}
+.od-side-accent{position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--pink),var(--pu));}
+.od-in{position:relative;z-index:2;max-width:1340px;margin:0 auto;padding:8rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;width:100%;}
+.od-intensity{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.6rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--pink);margin-bottom:1.5rem;}
+.od-intensity::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 12px var(--pink);animation:pulse-dot 1.4s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.6);}}
+.od-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,7rem);line-height:0.88;color:#fff;margin-bottom:1.2rem;}
+.od-title .pk{color:var(--pink);}
+.od-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:rgba(0,232,200,0.7);line-height:1.7;margin-bottom:1.8rem;padding-left:1.2rem;border-left:2px solid rgba(0,232,200,0.3);}
+.od-desc{font-size:0.95rem;color:rgba(255,255,255,0.42);line-height:1.9;margin-bottom:2.5rem;}
+.od-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.8rem;}
+.od-stat{border-top:1px solid rgba(255,255,255,0.07);padding-top:1rem;}
+.od-stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:#fff;line-height:1;}
+.od-stat-lbl{font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-top:0.25rem;}
+.od-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-pink{display:inline-block;padding:0.95rem 2.4rem;background:var(--pink);color:#fff;font-weight:700;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:100px;text-decoration:none;box-shadow:0 0 28px rgba(255,45,158,0.4);transition:transform 0.2s cubic-bezier(.34,1.56,.64,1),box-shadow 0.2s;}
+.btn-pink:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 0 48px rgba(255,45,158,0.6);}
+.btn-teal{display:inline-block;padding:0.95rem 2.4rem;background:var(--teal);color:#080808;font-weight:700;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:100px;text-decoration:none;box-shadow:0 0 28px rgba(0,232,200,0.4);transition:transform 0.2s cubic-bezier(.34,1.56,.64,1),box-shadow 0.2s;}
+.btn-teal:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 0 48px rgba(0,232,200,0.6);}
+.btn-ghost{display:inline-block;padding:0.95rem 2.4rem;background:transparent;color:rgba(255,255,255,0.7);font-weight:600;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:100px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.18);transition:all 0.2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.5);color:#fff;}
+.od-image-frame{position:relative;}
+.od-frame-img{width:100%;border-radius:8px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,0.6),0 0 0 1px rgba(255,45,158,0.15);}
+.od-frame-img img{width:100%;display:block;filter:brightness(0.9) saturate(1.15);}
+.od-badge{position:absolute;bottom:-20px;left:-20px;background:var(--pink);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.08em;padding:0.7rem 1.4rem;border-radius:8px;box-shadow:0 8px 32px rgba(255,45,158,0.5);}
+
+/* ALL EVENTS */
+#all-events{padding:8rem 2.5rem;background:#080808;position:relative;overflow:hidden;}
+#all-events::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(139,47,255,0.2),transparent);}
+.ae-in{max-width:1340px;margin:0 auto;}
+.sec-label{font-size:0.78rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;display:flex;align-items:center;gap:0.8rem;margin-bottom:0.8rem;}
+.sec-label::before{content:'';width:22px;height:1.5px;background:currentColor;}
+.sec-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,6vw,5.5rem);line-height:0.92;color:#fff;margin-bottom:1rem;}
+.events-list{margin-top:4rem;display:flex;flex-direction:column;gap:2px;}
+.ev-row{display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:2rem;padding:2.2rem 2.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;text-decoration:none;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.4s cubic-bezier(.34,1.56,.64,1);}
+.ev-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ev-clr,var(--teal));transform:scaleY(0);transform-origin:bottom;transition:transform 0.35s ease;}
+.ev-row:hover{border-color:rgba(255,255,255,0.12);transform:translateX(6px);}
+.ev-row:hover::before{transform:scaleY(1);}
+.ev-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:rgba(255,255,255,0.07);letter-spacing:0.05em;line-height:1;}
+.ev-name{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#fff;letter-spacing:0.03em;line-height:1;margin-bottom:0.3rem;}
+.ev-sub{font-size:0.82rem;color:rgba(255,255,255,0.3);line-height:1.6;}
+.ev-meta{text-align:right;}
+.ev-tag{display:inline-block;font-size:0.58rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:100px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.3);margin-bottom:0.5rem;}
+.ev-arrow{font-size:1.2rem;color:rgba(255,255,255,0.15);transition:color 0.2s,transform 0.2s;display:block;}
+.ev-row:hover .ev-arrow{color:var(--ev-clr,var(--teal));transform:translateX(4px);}
+
+/* REGISTER CTA */
+#reg-cta{padding:8rem 2.5rem;background:#0A0A0A;position:relative;overflow:hidden;text-align:center;}
+.reg-in{max-width:700px;margin:0 auto;position:relative;z-index:1;}
+
+/* MUSIC TOGGLE */
+#music-btn{position:fixed;bottom:2rem;right:2rem;z-index:490;width:52px;height:52px;border-radius:50%;background:rgba(8,8,8,0.75);border:1.5px solid rgba(0,232,200,0.45);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.2rem;color:var(--teal);transition:all 0.25s ease;box-shadow:0 4px 20px rgba(0,0,0,0.5);}
+#music-btn:hover{background:rgba(0,232,200,0.12);border-color:var(--teal);transform:scale(1.1);box-shadow:0 0 20px rgba(0,232,200,0.4),0 4px 20px rgba(0,0,0,0.5);}
+#music-btn.playing{background:rgba(0,232,200,0.1);border-color:var(--teal);color:var(--teal);box-shadow:0 0 24px rgba(0,232,200,0.5),0 4px 20px rgba(0,0,0,0.5);animation:music-pulse 2s ease-in-out infinite;}
+@keyframes music-pulse{0%,100%{box-shadow:0 0 24px rgba(0,232,200,0.5),0 4px 20px rgba(0,0,0,0.5);}50%{box-shadow:0 0 40px rgba(0,232,200,0.7),0 4px 20px rgba(0,0,0,0.5);}}
+
+/* FOOTER */
+footer{background:#050505;padding:5.5rem 2.5rem 2.5rem;border-top:1px solid rgba(255,255,255,0.04);}
+.ft-in{max-width:1340px;margin:0 auto;}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem;}
+.ft-brand img{height:70px;filter:invert(1);mix-blend-mode:screen;opacity:0.8;display:block;margin-bottom:1rem;}
+.ft-brand p{font-size:0.85rem;color:rgba(255,255,255,0.22);line-height:1.9;max-width:240px;}
+.ft-col h4{font-size:0.58rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);opacity:0.6;margin-bottom:1.2rem;}
+.ft-links{display:flex;flex-direction:column;gap:0.65rem;}
+.ft-links a{font-size:0.85rem;color:rgba(255,255,255,0.24);text-decoration:none;transition:color 0.2s;}
+.ft-links a:hover{color:rgba(255,255,255,0.8);}
+.ft-socials{display:flex;gap:0.75rem;margin-top:1.5rem;}
+.ft-soc{width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:rgba(255,255,255,0.35);text-decoration:none;transition:all 0.2s;}
+.ft-soc:hover{border-color:var(--teal);color:var(--teal);transform:scale(1.12);}
+.ft-bot{border-top:1px solid rgba(255,255,255,0.04);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.ft-copy{font-size:0.7rem;color:rgba(255,255,255,0.14);}
+
+@media(max-width:1024px){.od-in{grid-template-columns:1fr;}.od-image-frame{display:none;}.ft-grid{grid-template-columns:1fr 1fr;gap:3rem;}}
+@media(max-width:860px){.ev-row{grid-template-columns:1fr auto;}.ev-num{display:none;}.ft-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){
+  #nav{padding:0.65rem 1.2rem;}.nav-logo img{height:40px;}.nav-brand{font-size:1.1rem;}.nav-links{display:none;}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(8,8,8,0.98);padding:1.5rem;gap:1.2rem;z-index:499;}
+  .nav-a{font-size:0.9rem;}.nav-burger{display:flex;}
+  #all-events,#reg-cta{padding:5rem 1.5rem;}
+  .ev-row{grid-template-columns:1fr;gap:0.8rem;padding:1.8rem 1.5rem;}
+  .ev-meta{text-align:left;}.ft-grid{grid-template-columns:1fr;gap:2rem;}
+  .od-in{padding:6rem 1.5rem;}
+  .hero-content{padding:0 1.5rem;}
+  .hero-h1{font-size:clamp(3rem,14vw,6rem);}
+  .hero-sub{font-size:1rem;max-width:100%;}
+  .ft-brand p{font-size:0.9rem;}
+  .ft-links a{font-size:0.92rem;}
+  .ft-copy{font-size:0.78rem;}
+  .ft-col h4{font-size:0.68rem;}
+  .ft-soc{width:42px;height:42px;}
+  .od-h{font-size:clamp(2.5rem,12vw,5rem);}
+  .od-stats{gap:1.5rem;flex-wrap:wrap;}
+  .ev-title{font-size:1.8rem;}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div id="cursor">👟</div>
+<audio id="bg-music" loop preload="metadata"><source src="audio/brave.mp3" type="audio/mpeg"></audio>
+<button id="music-btn" aria-label="Toggle music">♪</button>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="index.html" class="nav-logo"><img src="Screenshot_2026-03-28_195930-removebg-preview.png" alt="You Inspire Now"><span class="nav-brand">You Inspire Now</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" class="nav-a">Home</a>
+      <a href="about.html" class="nav-a">About</a>
+      <a href="events.html" class="nav-a active">Events</a>
+      <a href="merch.html" class="nav-a">Merch</a>
+      <a href="contact.html" class="nav-a">Connect</a>
+      <a href="donate.html" class="nav-pill">Give →</a>
+    </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" style="background-image:url('images/hero.jpg');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-top-shade"></div>
+  <div class="blob blob-pink" style="width:600px;height:600px;top:-200px;right:-100px;--bd:14s;"></div>
+  <div class="blob blob-pu" style="width:400px;height:400px;bottom:-100px;left:5%;--bd:18s;--bdel:-5s;"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Live Events</div>
+    <h1 class="hero-h1">Answer The<br><span class="pk">Call.</span></h1>
+    <p class="hero-sub">Real experiences. Real transformation. Every event is designed to push you beyond where you thought you could go — and show you who you were always meant to be.</p>
+  </div>
+</section>
+
+<!-- ADVENTURE ODYSSEY FEATURED -->
+<section id="odyssey">
+  <div class="od-photo"></div>
+  <div class="od-overlay"></div>
+  <div class="od-side-accent"></div>
+  <div class="blob blob-pink" style="width:500px;height:500px;top:20%;left:-100px;--bd:16s;opacity:0.35;"></div>
+  <div class="od-in">
+    <div class="od-content reveal-left">
+      <div class="od-intensity">⚡ Signature Event — Register Now</div>
+      <h2 class="od-title"><span class="pk">Adventure</span><br><span class="pk">Odyssey</span></h2>
+      <div class="od-quote">"I can do all things through Christ who strengthens me." — Philippians 4:13</div>
+      <p class="od-desc">This isn't a spa day. Adventure Odyssey is a raw, physical, full-throttle experience built to break you open — and show you what's on the other side of your limit. Sweat. Dirt. Faith. Sisterhood. You'll leave different.</p>
+      <div class="od-stats">
+        <div class="od-stat"><div class="od-stat-num">1</div><div class="od-stat-lbl">Full Day</div></div>
+        <div class="od-stat"><div class="od-stat-num">∞</div><div class="od-stat-lbl">Breakthrough</div></div>
+        <div class="od-stat"><div class="od-stat-num">100%</div><div class="od-stat-lbl">Worth It</div></div>
+      </div>
+      <div class="od-btns">
+        <a href="#" class="btn-pink" data-magnetic>Register Now</a>
+        <a href="#all-events" class="btn-ghost">All Events</a>
+      </div>
+    </div>
+    <div class="od-image-frame reveal-right" style="transition-delay:0.15s">
+      <div class="od-frame-img">
+        <img src="images/women-2.jpg" alt="Adventure Odyssey — Woman pushing her limits">
+      </div>
+      <div class="od-badge">ADVENTURE ODYSSEY</div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL EVENTS -->
+<section id="all-events">
+  <div class="blob blob-pu" style="position:absolute;width:700px;height:700px;top:-150px;right:-200px;--bd:18s;"></div>
+  <div class="blob blob-pink" style="position:absolute;width:500px;height:500px;bottom:-100px;left:-120px;--bd:14s;--bdel:-6s;"></div>
+  <div class="ae-in">
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--pu);">— All Events</div>
+      <div class="sec-h">Every<br><span style="color:var(--teal);">Experience.</span></div>
+      <p style="font-size:1rem;color:rgba(255,255,255,0.35);line-height:1.9;max-width:540px;margin-top:1rem;">From physical challenges to intimate retreats — each event is a different doorway into the same truth: there is more within you.</p>
+    </div>
+    <div class="events-list">
+      <a href="#" class="ev-row reveal" style="--ev-clr:var(--pink);">
+        <div class="ev-num">01</div>
+        <div class="ev-info">
+          <div class="ev-name" style="color:var(--pink);">Adventure Odyssey</div>
+          <div class="ev-sub">A full-day physical and spiritual challenge. Sweat. Push. Discover. You will leave changed.</div>
+        </div>
+        <div class="ev-meta">
+          <div class="ev-tag" style="color:var(--pink);border-color:rgba(255,45,158,0.2);background:rgba(255,45,158,0.06);">Signature</div>
+          <div class="ev-arrow">→</div>
+        </div>
+      </a>
+      <a href="#" class="ev-row reveal" style="--ev-clr:var(--teal);transition-delay:0.07s">
+        <div class="ev-num">02</div>
+        <div class="ev-info">
+          <div class="ev-name">Extreme Marriage Challenge</div>
+          <div class="ev-sub">An intensive experience for couples ready to go deeper — in faith, love, and commitment.</div>
+        </div>
+        <div class="ev-meta">
+          <div class="ev-tag" style="color:var(--teal);border-color:rgba(0,232,200,0.2);background:rgba(0,232,200,0.06);">Couples</div>
+          <div class="ev-arrow">→</div>
+        </div>
+      </a>
+      <a href="#" class="ev-row reveal" style="--ev-clr:#D4702A;transition-delay:0.14s">
+        <div class="ev-num">03</div>
+        <div class="ev-info">
+          <div class="ev-name">Get Snatched Challenge</div>
+          <div class="ev-sub">Body, mind, and spirit. A fitness and faith challenge that proves health is a whole-person journey.</div>
+        </div>
+        <div class="ev-meta">
+          <div class="ev-tag" style="color:#D4702A;border-color:rgba(212,112,42,0.2);background:rgba(212,112,42,0.06);">Wellness</div>
+          <div class="ev-arrow">→</div>
+        </div>
+      </a>
+      <a href="#" class="ev-row reveal" style="--ev-clr:var(--pu);transition-delay:0.21s">
+        <div class="ev-num">04</div>
+        <div class="ev-info">
+          <div class="ev-name">The Walking Movement</div>
+          <div class="ev-sub">Move together in community. Walk with purpose, intention, and the women beside you.</div>
+        </div>
+        <div class="ev-meta">
+          <div class="ev-tag" style="color:var(--pu);border-color:rgba(139,47,255,0.2);background:rgba(139,47,255,0.06);">Community</div>
+          <div class="ev-arrow">→</div>
+        </div>
+      </a>
+      <a href="#" class="ev-row reveal" style="--ev-clr:var(--pink);transition-delay:0.28s">
+        <div class="ev-num">05</div>
+        <div class="ev-info">
+          <div class="ev-name">Weekend Y.I.N. Retreat</div>
+          <div class="ev-sub">An immersive weekend experience. Rest, reconnect, and rediscover who you are in God.</div>
+        </div>
+        <div class="ev-meta">
+          <div class="ev-tag" style="color:var(--pink);border-color:rgba(255,45,158,0.2);background:rgba(255,45,158,0.06);">Retreat</div>
+          <div class="ev-arrow">→</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER CTA -->
+<section id="reg-cta">
+  <div class="blob blob-teal" style="width:700px;height:700px;top:-200px;left:50%;transform:translateX(-50%);--bd:17s;opacity:0.55;"></div>
+  <div class="reg-in reveal">
+    <div class="sec-label" style="justify-content:center;color:var(--teal);">— Don't Miss Out</div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6rem);line-height:0.92;color:#fff;margin-bottom:1.2rem;">You Were Made<br><span style="color:var(--teal);">For This.</span></h2>
+    <p style="font-size:1rem;color:rgba(255,255,255,0.38);line-height:1.9;margin-bottom:2.8rem;">Every event has limited capacity. When the call comes — answer it. Register early and secure your seat at the table.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="#" class="btn-teal" data-magnetic>Register for Next Event</a>
+      <a href="contact.html" class="btn-ghost">Have Questions?</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-in">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <img src="Screenshot_2026-03-28_195930-removebg-preview.png" alt="You Inspire Now">
+        <p>Faith-rooted encouragement for women becoming who they were created to be.</p>
+        <div class="ft-socials">
+          <a href="https://instagram.com/youinspirenow" target="_blank" class="ft-soc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://facebook.com/youinspirenow" target="_blank" class="ft-soc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://tiktok.com/@youinspirenow" target="_blank" class="ft-soc"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.53V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg></a>
+          <a href="https://youtube.com/@youinspirenow" target="_blank" class="ft-soc"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#080808"/></svg></a>
+        </div>
+      </div>
+      <div class="ft-col"><h4>Navigate</h4><div class="ft-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="events.html">Events</a><a href="merch.html">Merch</a><a href="contact.html">Connect</a></div></div>
+      <div class="ft-col"><h4>Events</h4><div class="ft-links"><a href="#" style="color:var(--pink)!important;">Adventure Odyssey</a><a href="#">Extreme Marriage</a><a href="#">Get Snatched</a><a href="#">Walking Movement</a><a href="#">YIN Retreat</a></div></div>
+      <div class="ft-col"><h4>Mission</h4><div class="ft-links"><a href="donate.html" style="color:var(--teal);opacity:0.9;">Go Inspire Now →</a><a href="donate.html">Donate</a><a href="contact.html">Contact Us</a></div></div>
+    </div>
+    <div class="ft-bot">
+      <p class="ft-copy">© 2026 You Inspire Now. All Rights Reserved.</p>
+      <p class="ft-copy">Gifted · Purposed · Be-YOU-tiful</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+document.getElementById('nav-burger').addEventListener('click',()=>document.getElementById('nav-links').classList.toggle('open'));
+const io=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');io.unobserve(entry.target);}});},{threshold:0,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>io.observe(el));
+const c=document.getElementById('cursor');
+if(c){document.addEventListener('mousemove',e=>{c.style.left=e.clientX+'px';c.style.top=e.clientY+'px';});document.querySelectorAll('a,button,input').forEach(el=>{el.addEventListener('mouseenter',()=>c.classList.add('hov'));el.addEventListener('mouseleave',()=>c.classList.remove('hov'));});}
+document.querySelectorAll('[data-magnetic]').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*0.28}px,${(e.clientY-r.top-r.height/2)*0.28}px)`;b.style.transition='transform 0.12s linear';});b.addEventListener('mouseleave',()=>{b.style.transition='transform 0.5s cubic-bezier(.34,1.56,.64,1)';b.style.transform='';});});
+(function(){
+  const btn=document.getElementById('music-btn'),aud=document.getElementById('bg-music');
+  if(!btn||!aud)return;
+  let on=false;
+  function syncBtn(){btn.classList.toggle('playing',on);btn.innerHTML=on?'\u266b':'\u266a';btn.classList.remove('resume-needed');}
+  function startPlay(t){
+    if(t>0){try{aud.currentTime=t;}catch(e){}}
+    aud.volume=0.38;
+    aud.play().then(()=>{on=true;syncBtn();}).catch(()=>{btn.classList.add('resume-needed');});
+  }
+  function play(){
+    const t=parseFloat(localStorage.getItem('yin-time')||'0');
+    if(t>0&&aud.readyState<1){aud.addEventListener('loadedmetadata',()=>startPlay(t),{once:true});aud.load();}
+    else{startPlay(t);}
+  }
+  function pause(){aud.pause();on=false;syncBtn();}
+  btn.addEventListener('click',()=>{on?pause():play();});
+  setInterval(()=>{if(!aud.paused)localStorage.setItem('yin-time',aud.currentTime.toString());},1000);
+  window.addEventListener('pagehide',()=>{localStorage.setItem('yin-playing',on?'1':'0');if(!aud.paused)localStorage.setItem('yin-time',aud.currentTime.toString());});
+  if(localStorage.getItem('yin-playing')==='1'){play();}
+})();
+</script>
+</body>
+</html>
