@@ -33,14 +33,14 @@ body{font-family:'Inter',sans-serif;background:#080808;color:#fff;overflow-x:hid
 /* NAV */
 #nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0.85rem 2.5rem;background:rgba(8,8,8,0.55);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.04);transition:background 0.4s,box-shadow 0.4s;}
 #nav.scrolled{background:rgba(8,8,8,0.96);backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(255,255,255,0.05);}
-.nav-in{max-width:1340px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+.nav-in{max-width:1340px;margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2rem;}.nav-actions{display:flex;align-items:center;justify-content:flex-end;gap:1rem;}
 .nav-logo{display:flex;align-items:center;gap:0.65rem;text-decoration:none;}.nav-logo img{height:50px;display:block;filter:invert(1);mix-blend-mode:screen;}
 .nav-brand{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:#fff;letter-spacing:0.1em;line-height:1;white-space:nowrap;}
-.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links{display:flex;align-items:center;justify-content:center;gap:2rem;}
 .nav-a{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.42);text-decoration:none;transition:color 0.2s;position:relative;}
 .nav-a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--teal);transition:width 0.25s;}
 .nav-a:hover,.nav-a.active{color:#fff;}.nav-a:hover::after,.nav-a.active::after{width:100%;}
-.nav-pill{padding:0.45rem 1.3rem;background:var(--teal);color:#080808;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:100px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 20px rgba(0,232,200,0.35);}
+.nav-pill{padding:0.65rem 2rem;background:var(--teal);color:#080808;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:100px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 20px rgba(0,232,200,0.35);}
 .nav-pill:hover{transform:scale(1.07);box-shadow:0 0 32px rgba(0,232,200,0.55);}
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
 .nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;}
@@ -132,7 +132,7 @@ footer{background:#050505;padding:5.5rem 2.5rem 2.5rem;border-top:1px solid rgba
 
 @media(max-width:1024px){.con-in{grid-template-columns:1fr;gap:4rem;}.ft-grid{grid-template-columns:1fr 1fr;gap:3rem;}}
 @media(max-width:600px){
-  #nav{padding:0.65rem 1.2rem;}.nav-logo img{height:40px;}.nav-brand{font-size:1.1rem;}.nav-links{display:none;}
+  #nav{padding:0.65rem 1.2rem;}.nav-logo img{height:40px;}.nav-in{grid-template-columns:1fr auto;}.nav-links{display:none;}
   .nav-links.open{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(8,8,8,0.98);padding:1.5rem;gap:1.2rem;z-index:499;}
   .nav-a{font-size:0.9rem;}.nav-burger{display:flex;}
   #contact{padding:5rem 1.5rem;}
@@ -158,16 +158,18 @@ footer{background:#050505;padding:5.5rem 2.5rem 2.5rem;border-top:1px solid rgba
 
 <nav id="nav">
   <div class="nav-in">
-    <a href="index.html" class="nav-logo"><img src="Screenshot_2026-03-28_195930-removebg-preview.png" alt="You Inspire Now"><span class="nav-brand">You Inspire Now</span></a>
+    <a href="index.html" class="nav-logo"><img src="Screenshot_2026-03-28_195930-removebg-preview.png" alt="You Inspire Now"></a>
     <div class="nav-links" id="nav-links">
       <a href="index.html" class="nav-a">Home</a>
       <a href="about.html" class="nav-a">About</a>
       <a href="events.html" class="nav-a">Events</a>
       <a href="merch.html" class="nav-a">Merch</a>
       <a href="contact.html" class="nav-a active">Connect</a>
-      <a href="donate.html" class="nav-pill">Give →</a>
     </div>
-    <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-actions">
+      <a href="donate.html" class="nav-pill">Give →</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </nav>
 
@@ -386,16 +388,22 @@ if(c){document.addEventListener('mousemove',e=>{c.style.left=e.clientX+'px';c.st
   if(!btn||!aud)return;
   let on=false;
   function syncBtn(){btn.classList.toggle('playing',on);btn.innerHTML=on?'\u266b':'\u266a';btn.classList.remove('resume-needed');}
-  function play(){
-    const t=parseFloat(localStorage.getItem('yin-time')||'0');
+  aud.addEventListener('play',()=>{on=true;syncBtn();});
+  aud.addEventListener('pause',()=>{on=false;syncBtn();});
+  function startPlay(t){
     if(t>0){try{aud.currentTime=t;}catch(e){}}
     aud.volume=0.38;
-    aud.play().then(()=>{on=true;syncBtn();}).catch(()=>{btn.classList.add('resume-needed');});
+    aud.play().catch(()=>{btn.classList.add('resume-needed');});
   }
-  function pause(){aud.pause();on=false;syncBtn();}
+  function play(){
+    const t=parseFloat(localStorage.getItem('yin-time')||'0');
+    if(t>0&&aud.readyState<1){aud.addEventListener('loadedmetadata',()=>startPlay(t),{once:true});aud.load();}
+    else{startPlay(t);}
+  }
+  function pause(){aud.pause();}
   btn.addEventListener('click',()=>{on?pause():play();});
   setInterval(()=>{if(!aud.paused)localStorage.setItem('yin-time',aud.currentTime.toString());},1000);
-  window.addEventListener('pagehide',()=>{localStorage.setItem('yin-playing',on?'1':'0');localStorage.setItem('yin-time',aud.currentTime.toString());});
+  window.addEventListener('pagehide',()=>{localStorage.setItem('yin-playing',on?'1':'0');if(!aud.paused)localStorage.setItem('yin-time',aud.currentTime.toString());});
   if(localStorage.getItem('yin-playing')==='1'){play();}
 })();
 </script>
