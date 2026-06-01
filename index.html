@@ -195,15 +195,20 @@ body{font-family:'Inter',sans-serif;background:#080808;color:#fff;overflow-x:hid
 /* ── HERO ── */
 #hero{min-height:100vh;position:relative;overflow:hidden;
   display:flex;align-items:flex-end;padding-bottom:8rem;padding-top:110px;}
+#hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(to bottom,var(--pink) 0%,var(--teal) 100%);z-index:3;}
+#hero::after{content:'';position:absolute;left:-8%;top:10%;width:55%;height:75%;
+  background:radial-gradient(ellipse at 30% 50%,rgba(0,232,200,0.09) 0%,transparent 65%);
+  pointer-events:none;z-index:1;}
 .hero-bg{position:absolute;inset:0;
   background:url('images/hero.jpg') center 18% / cover no-repeat;
-  filter:brightness(0.52) saturate(0.88);
+  filter:brightness(0.55) saturate(0.9);
   transform:scale(1.04);transition:transform 12s ease;}
 #hero:hover .hero-bg{transform:scale(1);}
 .hero-overlay{position:absolute;inset:0;
   background:
-    linear-gradient(105deg,rgba(8,8,8,0.94) 0%,rgba(8,8,8,0.78) 38%,rgba(8,8,8,0.3) 65%,rgba(8,8,8,0.05) 100%),
-    linear-gradient(to top,rgba(8,8,8,0.9) 0%,transparent 45%);}
+    linear-gradient(105deg,rgba(8,8,8,0.93) 0%,rgba(8,8,8,0.76) 38%,rgba(8,8,8,0.28) 65%,rgba(8,8,8,0.04) 100%),
+    linear-gradient(to top,rgba(8,8,8,0.88) 0%,transparent 45%);}
 
 .hero-content{position:relative;z-index:2;max-width:1340px;margin:0 auto;padding:0 2.5rem;width:100%;}
 .hero-tag{font-family:'Inter',sans-serif;font-size:0.75rem;font-weight:700;
@@ -557,7 +562,7 @@ footer{background:#050505;padding:5.5rem 2.5rem 2.5rem;
     <div class="hero-tag">Women's Faith Ministry</div>
     <h1 class="hero-h1">
       <span class="hero-line" style="animation-delay:0.1s">There Is</span>
-      <span class="hero-line" style="animation-delay:0.22s">More</span>
+      <span class="hero-line" style="animation-delay:0.22s;color:var(--pink);">More</span>
       <span class="hero-line accent" style="animation-delay:0.34s">Within.</span>
     </h1>
     <p class="hero-sub hero-line" style="animation-delay:0.5s"><strong>Calling out the greatness within,</strong> while inspiring those around you. You were made for more than this moment.</p>
