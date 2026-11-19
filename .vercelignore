@@ -1,0 +1,5 @@
+# Only the website ships. Keep working files out of the deploy.
+patch*.mjs
+*.md
+START SERVER.bat
+temporary screenshots

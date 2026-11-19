@@ -1,0 +1,17 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/merch.html", "destination": "/shop.html", "permanent": true },
+    { "source": "/merch", "destination": "/shop.html", "permanent": true },
+    { "source": "/community.html", "destination": "/about.html", "permanent": true },
+    { "source": "/pillars.html", "destination": "/index.html#pillars", "permanent": true },
+    { "source": "/resources.html", "destination": "/index.html", "permanent": true },
+    { "source": "/podcast.html", "destination": "/index.html", "permanent": true },
+    { "source": "/go-inspire-now.html", "destination": "https://www.goinspirenow.org/", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }] },
+    { "source": "/images/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] }
+  ]
+}

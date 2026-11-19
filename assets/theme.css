@@ -1,0 +1,57 @@
+/* You Inspire Now — dark theme (black · teal · pink · purple). Go Inspire Now inverts this. */
+:root{
+  --teal:#00E8C8;--pink:#FF2D9E;--pu:#8B2FFF;
+  --a1:#00E8C8;--a1-rgb:0,232,200;--a1-ink:#080808;
+  --a2:#FF2D9E;--a2-rgb:255,45,158;--a2-ink:#fff;
+  --a3:#8B2FFF;--a3-rgb:139,47,255;
+  --a4:#FBBF24;
+  --give:#FF2D9E;--give-rgb:255,45,158;--give-ink:#fff;
+  --focus:#00E8C8;
+
+  --bg:#080808;--bg-alt:#0B0B0B;--bg-deep:#050505;
+  --card:#111111;--card-2:#161616;
+  --tx:#fff;
+  --tx-strong:rgba(255,255,255,.88);
+  --tx-lead:rgba(255,255,255,.55);
+  --tx-body:rgba(255,255,255,.46);
+  --tx-muted:rgba(255,255,255,.34);
+  --tx-faint:rgba(255,255,255,.24);
+  --line:rgba(255,255,255,.07);--line-2:rgba(255,255,255,.12);--line-3:rgba(255,255,255,.2);
+  --fill:rgba(255,255,255,.04);--fill-2:rgba(255,255,255,.09);
+  --shadow-rgb:0,0,0;
+  --glass-bg:rgba(8,8,8,.72);
+
+  --nav-bg:rgba(8,8,8,.55);--nav-bg-2:rgba(8,8,8,.97);--nav-line:rgba(255,255,255,.05);
+  --logo-filter:invert(1);--logo-blend:screen;
+  --intro-bg:rgba(8,8,8,.78);--intro-logo-filter:invert(1) drop-shadow(0 0 24px rgba(0,232,200,.5));
+
+  --blob-1:rgba(0,232,200,.22);--blob-2:rgba(255,45,158,.20);--blob-3:rgba(139,47,255,.18);
+  --grain-op:.028;--grain-blend:normal;
+
+  --hero-filter:brightness(.55) saturate(.9);
+  --hero-overlay:linear-gradient(105deg,rgba(8,8,8,.93) 0%,rgba(8,8,8,.76) 38%,rgba(8,8,8,.28) 65%,rgba(8,8,8,.04) 100%),linear-gradient(to top,rgba(8,8,8,.88) 0%,transparent 45%);
+  --hero-tint:linear-gradient(120deg,rgba(139,47,255,.25),rgba(0,232,200,.12));--hero-tint-blend:multiply;
+  --page-hero-filter:brightness(.42) saturate(.75);
+  --page-hero-overlay:linear-gradient(to top,#080808 0%,rgba(8,8,8,.6) 45%,rgba(8,8,8,.25) 100%),linear-gradient(100deg,rgba(8,8,8,.85) 0%,transparent 70%);
+  --media-tint:linear-gradient(140deg,rgba(139,47,255,.35),rgba(0,232,200,.18));
+  --media-tint-soft:linear-gradient(140deg,rgba(139,47,255,.18),rgba(255,45,158,.12));
+
+  --mq-bg:linear-gradient(90deg,rgba(0,232,200,.05),rgba(139,47,255,.06),rgba(255,45,158,.05));
+  --mq-line:rgba(255,255,255,.07);--mq-ink:rgba(255,255,255,.86);--mq-star:#00E8C8;
+  --band-bg:linear-gradient(135deg,rgba(0,232,200,.08) 0%,rgba(139,47,255,.06) 100%);
+
+  --input-bg:rgba(255,255,255,.04);--input-bg-focus:rgba(255,255,255,.06);--input-line:rgba(255,255,255,.1);
+  --contrast-bg:#fff;--contrast-ink:#0B0B0B;
+  --etch-s1:.5;--etch-s2:.35;
+
+  /* The portal on YIN opens into Go Inspire Now: pink + white paint, "a splat from another dimension" */
+  --portal-sec-bg:radial-gradient(ellipse at 75% 50%,rgba(255,45,158,.16),transparent 55%),radial-gradient(ellipse at 15% 80%,rgba(139,47,255,.12),transparent 50%),#080808;
+  --portal-glow-rgb:255,45,158;
+  --portal-ring:rgba(255,190,225,.55);
+  --portal-core-bg:radial-gradient(circle at 50% 38%,#FFFFFF 0%,#FFE4F2 42%,#FF8FC8 78%,#FF2D9E 100%);
+  --portal-vortex:conic-gradient(from 0deg,rgba(255,45,158,0),rgba(255,45,158,.55),rgba(255,255,255,0),rgba(255,45,158,.4),rgba(255,255,255,0),rgba(255,45,158,.55),rgba(255,45,158,0));
+  --portal-core-ink:#3A0A25;--portal-logo-filter:none;
+  --portal-splat-1:#FF2D9E;--portal-splat-2:#FFFFFF;
+  --ribbon-bg:linear-gradient(90deg,#FF2D9E,#FF5FB3 50%,#FF2D9E);--ribbon-ink:#fff;--ribbon-star:#fff;--ribbon-glow:255,45,158;
+  --sister-dot:#FF2D9E;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — The 2027 Drops | You Inspire Now</title>
+<meta name="description" content="Evangelistic gear from You Inspire Now. Four collections in 2027 — Becoming, Courage, Unstoppable, Rooted — each open for a 7-day pre-order.">
+<meta name="theme-color" content="#080808">
+<link rel="icon" href="Screenshot_2026-03-28_195930-removebg-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.page-hero .hero-bg{background-image:url('images/brand-1.jpg');background-position:50% 22%;filter:brightness(.35) saturate(.6) blur(10px);transform:scale(1.15);}
+.vault{text-align:center;position:relative;}
+.vault-k{font-size:.66rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--a1);margin-bottom:1rem;}
+.vault-h{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(2.4rem,5vw,4rem);letter-spacing:.06em;color:var(--tx-strong);margin-bottom:2rem;}
+.vault .cd{justify-content:center;}
+.vault-cap{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--tx-lead);margin:2rem 0 2.4rem;}
+.cal{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+.cal .drop{aspect-ratio:3/4.4;}
+.cal .drop-info .cd{gap:.3rem;}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.how div{padding:2.2rem;border-radius:18px;background:var(--card);border:1px solid var(--line);}
+.how b{display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:3.4rem;line-height:1;color:var(--a1);margin-bottom:.6rem;}
+.how h3{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.7rem;letter-spacing:.03em;margin-bottom:.5rem;}
+.how p{font-size:.9rem;color:var(--tx-body);line-height:1.75;}
+.alerts{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.manifesto{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,5vw,4.4rem);line-height:.98;letter-spacing:.02em;}
+@media(max-width:1100px){.cal{grid-template-columns:1fr 1fr;}}
+@media(max-width:860px){.how{grid-template-columns:1fr;}.alerts{grid-template-columns:1fr;gap:3rem;}}
+@media(max-width:600px){.cal{gap:.8rem;}.cal .drop{aspect-ratio:3/4.8;}}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<audio id="bg-music" loop preload="none"><source src="audio/brave.mp3" type="audio/mpeg"></audio>
+<button id="music-btn" type="button" aria-label="Play music" aria-pressed="false">
+  <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+  <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+</button><span class="music-tip">Music</span>
+
+<nav id="nav" aria-label="Main">
+  <div class="nav-in">
+    <a href="index.html" class="nav-logo" aria-label="You Inspire Now — home"><img src="Screenshot_2026-03-28_195930-removebg-preview.png" alt="You Inspire Now" width="55" height="50"></a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" class="nav-a">Home</a>
+      <a href="about.html" class="nav-a">About</a>
+      <a href="events.html" class="nav-a">Events</a>
+      <a href="shop.html" class="nav-a active" aria-current="page">Shop</a>
+      <a href="contact.html" class="nav-a">Connect</a>
+      <a href="https://www.goinspirenow.org" class="nav-a nav-sister">Go Inspire Now ↗</a>
+    </div>
+    <div class="nav-actions">
+      <a href="donate.html" class="nav-pill"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>Give</a>
+      <button class="nav-burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="blob blob-a2" style="width:600px;height:600px;top:-150px;right:-100px;--bd:14s;opacity:.6;"></div>
+  <div class="hero-content">
+    <div class="hero-tag">The Collection</div>
+    <h1 class="hero-h1">Wear Your<br><span class="c-a1">Inspiration.</span></h1>
+    <p class="hero-sub"><strong>Evangelistic gear.</strong> Wear the reminder. Live the message. Walk like the woman you were created to be.</p>
+  </div>
+</section>
+
+<!-- THE VAULT -->
+<section class="sec sec-line" id="vault">
+  <div class="blob blob-a1" style="width:600px;height:600px;top:-200px;left:-150px;--bd:15s;opacity:.6;"></div>
+  <div class="blob blob-a3" style="width:500px;height:500px;bottom:-200px;right:-100px;--bd:18s;opacity:.7;"></div>
+  <div class="wrap vault reveal">
+    <div class="vault-k">No drops have dropped yet&hellip;</div>
+    <div class="vault-h">The First Drop Lands In</div>
+    <div class="cd cd-xl" data-countdown="2027-04-01T00:00:00-05:00" data-done="The Becoming Collection is open" role="timer" aria-label="Countdown to the first drop">
+      <div class="cd-u"><b data-u="d">00</b><span>Days</span></div><i>:</i>
+      <div class="cd-u"><b data-u="h">00</b><span>Hours</span></div><i>:</i>
+      <div class="cd-u"><b data-u="m">00</b><span>Mins</span></div><i>:</i>
+      <div class="cd-u"><b data-u="s">00</b><span>Secs</span></div>
+    </div>
+    <p class="vault-cap">The Becoming Collection · April 2027 · 7-day pre-order</p>
+    <a href="#alerts" class="btn btn-a2" data-magnetic>Get Drop Alerts</a>
+  </div>
+</section>
+
+<!-- 2027 DROP CALENDAR -->
+<section class="sec sec-alt" id="drops">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:3.5rem;">
+      <div class="section-label c-a2">The 2027 Drops</div>
+      <h2 class="section-h">Four Drops.<br>One <span class="tl">Message.</span></h2>
+      <p class="section-sub" style="margin-bottom:0;">Each collection stays under wraps until its countdown hits zero. Then it's open for seven days of pre-order — and that's it.</p>
+    </div>
+    <div class="cal">
+      <div class="drop reveal" style="--drop-tint:rgba(139,47,255,.6)">
+        <img class="drop-img" src="images/drop-brand-1.png" alt="" aria-hidden="true">
+        <div class="media-tint"></div><div class="media-shade"></div><div class="drop-q" aria-hidden="true">?</div>
+        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="drop-info"><div class="drop-n">Drop 01 · Spring</div><div class="drop-name">The Becoming<br>Collection</div><div class="drop-when">April 2027</div>
+          <div class="cd cd-sm" data-countdown="2027-04-01T00:00:00-05:00" data-done="Pre-order open"><div class="cd-u"><b data-u="d">00</b><span>D</span></div><div class="cd-u"><b data-u="h">00</b><span>H</span></div><div class="cd-u"><b data-u="m">00</b><span>M</span></div><div class="cd-u"><b data-u="s">00</b><span>S</span></div></div></div>
+      </div>
+      <div class="drop reveal" style="--drop-tint:rgba(255,45,158,.55);transition-delay:.08s">
+        <img class="drop-img" src="images/drop-founder-1.png" alt="" aria-hidden="true">
+        <div class="media-tint"></div><div class="media-shade"></div><div class="drop-q" aria-hidden="true">?</div>
+        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="drop-info"><div class="drop-n">Drop 02 · Summer</div><div class="drop-name">The Courage<br>Collection</div><div class="drop-when">June 2027</div>
+          <div class="cd cd-sm" data-countdown="2027-06-01T00:00:00-05:00" data-done="Pre-order open"><div class="cd-u"><b data-u="d">00</b><span>D</span></div><div class="cd-u"><b data-u="h">00</b><span>H</span></div><div class="cd-u"><b data-u="m">00</b><span>M</span></div><div class="cd-u"><b data-u="s">00</b><span>S</span></div></div></div>
+      </div>
+      <div class="drop reveal" style="--drop-tint:rgba(0,190,165,.55);transition-delay:.16s">
+        <img class="drop-img" src="images/drop-women-1.png" alt="" aria-hidden="true">
+        <div class="media-tint"></div><div class="media-shade"></div><div class="drop-q" aria-hidden="true">?</div>
+        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="drop-info"><div class="drop-n">Drop 03 · Late Summer</div><div class="drop-name">The Unstoppable<br>Collection</div><div class="drop-when">August 2027</div>
+          <div class="cd cd-sm" data-countdown="2027-08-01T00:00:00-05:00" data-done="Pre-order open"><div class="cd-u"><b data-u="d">00</b><span>D</span></div><div class="cd-u"><b data-u="h">00</b><span>H</span></div><div class="cd-u"><b data-u="m">00</b><span>M</span></div><div class="cd-u"><b data-u="s">00</b><span>S</span></div></div></div>
+      </div>
+      <div class="drop reveal" style="--drop-tint:rgba(214,140,30,.55);transition-delay:.24s">
+        <img class="drop-img" src="images/drop-women-3.png" alt="" aria-hidden="true">
+        <div class="media-tint"></div><div class="media-shade"></div><div class="drop-q" aria-hidden="true">?</div>
+        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="drop-info"><div class="drop-n">Drop 04 · Fall</div><div class="drop-name">The Rooted<br>Collection</div><div class="drop-when">October 2027</div>
+          <div class="cd cd-sm" data-countdown="2027-10-01T00:00:00-05:00" data-done="Pre-order open"><div class="cd-u"><b data-u="d">00</b><span>D</span></div><div class="cd-u"><b data-u="h">00</b><span>H</span></div><div class="cd-u"><b data-u="m">00</b><span>M</span></div><div class="cd-u"><b data-u="s">00</b><span>S</span></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW DROPS WORK -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="center reveal" style="margin-bottom:3.5rem;">
+      <div class="section-label center">How Drops Work</div>
+      <h2 class="section-h">Blink And <span class="pk">It's Gone.</span></h2>
+    </div>
+    <div class="how">
+      <div class="reveal"><b>01</b><h3>The Countdown Hits Zero</h3><p>The collection is revealed — the designs, the scripture, the message behind every piece.</p></div>
+      <div class="reveal" style="transition-delay:.08s"><b class="c-a2">02</b><h3>7 Days To Pre-Order</h3><p>The pre-order window is open for one week only. Alert subscribers hear first.</p></div>
+      <div class="reveal" style="transition-delay:.16s"><b class="c-a3">03</b><h3>Then It's Gone</h3><p>When the window closes, that collection is done — until the next drop.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DROP ALERTS -->
+<section class="sec sec-alt sec-line" id="alerts">
+  <div class="blob blob-a2" style="width:550px;height:550px;bottom:-200px;left:-150px;--bd:16s;opacity:.6;"></div>
+  <div class="wrap alerts">
+    <div class="reveal-left">
+      <div class="section-label">Never Miss A Drop</div>
+      <p class="manifesto">Wear The Reminder.<br><span class="c-a1">Live The Message.</span><br><span class="c-a2">Walk Like The Woman</span><br>You Were Created To Be.</p>
+    </div>
+    <div class="panel reveal-right" data-form-wrap>
+      <form class="f" data-form="Drop Alerts">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="f-row">
+          <label>First name<input type="text" name="First name" required autocomplete="given-name"></label>
+          <label>Email<input type="email" name="Email" required autocomplete="email"></label>
+        </div>
+        <label><span>Phone for text alerts <small>(optional)</small></span><input type="tel" name="Phone" autocomplete="tel"></label>
+        <button type="submit" class="btn btn-a2 btn-block">Alert Me When It Drops →</button>
+        <p class="f-note">One heads-up before each drop. That's it.</p>
+      </form>
+      <div class="f-done" role="status"><b>You're on the drop list.</b><p>You'll hear before the Becoming Collection goes live. Stay ready.</p></div>
+      <div class="f-fallback" role="alert">That didn't send. <a href="#">Tap here to send it as an email instead →</a> (everything you typed is already filled in).</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ft-in">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <img src="Screenshot_2026-03-28_195930-removebg-preview.png" alt="You Inspire Now" width="76" height="70">
+        <p>Faith-rooted encouragement for women becoming who they were created to be.</p>
+        <a class="ft-sister" href="https://www.goinspirenow.org"><i></i>Our giveback: Go Inspire Now ↗</a>
+      </div>
+      <div class="ft-col"><h4>Navigate</h4><div class="ft-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="events.html">Events</a><a href="shop.html">Shop</a><a href="contact.html">Connect</a></div></div>
+      <div class="ft-col"><h4>Experiences</h4><div class="ft-links"><a href="events.html#adventure">Adventure Odyssey</a><a href="events.html#future">Extreme Marriage Challenge<span class="soon">Soon</span></a><a href="shop.html">The 2027 Drops</a></div></div>
+      <div class="ft-col"><h4>Give Back</h4><div class="ft-links"><a href="donate.html">Give</a><a href="https://www.goinspirenow.org/events.html">The Inspiring Walk ↗</a><a href="https://www.goinspirenow.org/love-boxes.html">Love Boxes ↗</a><a href="contact.html">Contact Us</a></div></div>
+    </div>
+    <div class="ft-bot"><p class="ft-copy">© <span data-year>2026</span> You Inspire Now. All Rights Reserved.</p><p class="ft-copy">There Is More Within · Gifted · Purposed · Be-YOU-tiful</p></div>
+  </div>
+</footer>
+<script src="assets/config.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
