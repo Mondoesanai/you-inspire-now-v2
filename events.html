@@ -25,19 +25,19 @@
 .od-date b{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.9rem;line-height:1;letter-spacing:.03em;}
 .od-date span{font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#6B6170;}
 .od-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.12rem;color:var(--tx-strong);line-height:1.7;margin-bottom:1.6rem;padding-left:1.2rem;border-left:2px solid rgba(255,255,255,.35);}
-.od-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2rem 0 2.6rem;}
-.od-stat{border-top:1px solid var(--line-2);padding-top:1rem;}
-.od-stat b{display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:2.4rem;color:#fff;line-height:1;}
-.od-stat span{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-muted);}
-.od-photos{position:relative;padding-bottom:12%;}
+.od-photos{position:relative;padding-bottom:13%;}
 .od-photos .photo{aspect-ratio:4/5;}
 .od-photos .photo img{object-position:50% 70%;}
-.od-photos .photo.small{position:absolute;width:52%;aspect-ratio:3/2;right:-5%;bottom:0;border:6px solid var(--bg);}
+/* the climbing shot tucks in at the bottom-left, into the gap — it no longer hangs off the page edge */
+.od-photos .photo.small{position:absolute;width:50%;aspect-ratio:3/2;left:-9%;bottom:0;border:6px solid var(--bg);}
 .od-photos .photo.small img{object-position:60% 40%;}
-.od-focus{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:5rem;}
-.od-focus div{padding:1.6rem 1.4rem;border-radius:16px;background:var(--card);border:1px solid var(--line);}
-.od-focus b{display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.7rem;letter-spacing:.03em;margin-bottom:.35rem;}
-.od-focus span{font-size:.85rem;color:var(--tx-body);line-height:1.65;}
+.od-focus{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:5.5rem;padding-top:3rem;border-top:1px solid var(--line);}
+.od-focus div{padding:1.7rem 1.5rem;border-radius:18px;background:var(--card);border:1px solid var(--line);}
+.od-focus b{display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.75rem;letter-spacing:.03em;margin-bottom:.4rem;}
+.od-focus span{font-size:.86rem;color:var(--tx-body);line-height:1.65;}
+#future{padding:6rem 2.5rem 7rem;}
+.future-grid{display:grid;grid-template-columns:1fr;gap:1.2rem;}
+.future-grid .acc{margin:0;}
 /* waitlist */
 .wl{display:grid;grid-template-columns:.9fr 1.1fr;gap:5rem;align-items:start;}
 .walk-link{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;padding:2rem 2.4rem;border-radius:20px;text-decoration:none;color:inherit;
@@ -50,8 +50,8 @@
 .emc h4{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.8rem;letter-spacing:.02em;line-height:1;margin-bottom:.5rem;}
 .emc p{font-size:.9rem;color:var(--tx-body);line-height:1.7;}
 .emc .pill{display:inline-block;font-size:.58rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:.3rem .7rem;border-radius:100px;background:rgba(251,191,36,.12);color:var(--a4);margin-bottom:.7rem;}
-@media(max-width:1024px){.od{grid-template-columns:1fr;gap:4rem;}.od-photos{max-width:620px;}.od-focus{grid-template-columns:1fr 1fr;}.wl{grid-template-columns:1fr;gap:3rem;}}
-@media(max-width:600px){#adventure{padding:5rem 1.25rem;}.od-stats{gap:1rem;}.od-stat b{font-size:2rem;}.od-focus{grid-template-columns:1fr;}.emc,.walk-link{grid-template-columns:1fr;}.walk-link{padding:1.6rem;}.od-photos .photo.small{right:-2%;}}
+@media(max-width:1024px){.od{grid-template-columns:1fr;gap:4rem;}.od-photos{max-width:620px;margin-left:auto;margin-right:auto;}.od-photos .photo.small{left:-4%;}.od-focus{grid-template-columns:1fr 1fr;margin-top:4rem;}.wl{grid-template-columns:1fr;gap:3rem;}.future-grid{grid-template-columns:1fr;}}
+@media(max-width:600px){#adventure{padding:5rem 1.25rem;}#future{padding:4.5rem 1.25rem 5rem;}.od-focus{grid-template-columns:1fr;padding-top:2.4rem;}.emc,.walk-link{grid-template-columns:1fr;}.walk-link{padding:1.6rem;}.od-photos .photo.small{left:-1%;width:56%;}}
 </style>
 </head>
 <body>
@@ -106,12 +106,7 @@
           <p>This isn't a spa day. Adventure Odyssey is five days built to take you deeper within yourself — so you can grow, heal, and stand a little taller. We focus on <strong>healing, adventure, fun, and pushing past your limits</strong> until you remember the greatness that's been inside you all along.</p>
           <p>Think of it as a holy shake-up. A reminder. Sweat. Dirt. Fun. Faith. Sisterhood. You'll leave different.</p>
         </div>
-        <div class="od-stats">
-          <div class="od-stat"><b>5</b><span>Days</span></div>
-          <div class="od-stat"><b>Sept 1–5</b><span>2027</span></div>
-          <div class="od-stat"><b>∞</b><span>Breakthrough</span></div>
-        </div>
-        <div class="hero-btns">
+        <div class="hero-btns" style="margin-top:2.2rem;">
           <a href="#waitlist" class="btn btn-contrast" data-magnetic>Join the Waitlist →</a>
           <a href="contact.html" class="btn btn-ghost">Have Questions?</a>
         </div>
@@ -172,7 +167,7 @@
 
 <!-- FUTURE EVENTS -->
 <section id="future" class="sec">
-  <div class="wrap" style="max-width:980px;">
+  <div class="wrap future-grid">
     <details class="acc reveal">
       <summary><span>Future Events <small>Not yet announced</small></span><span class="pm" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
       <div class="acc-body">
@@ -187,7 +182,7 @@
       </div>
     </details>
 
-    <a class="walk-link reveal" href="https://www.goinspirenow.org/events.html" style="margin-top:1.5rem;">
+    <a class="walk-link reveal" href="https://www.goinspirenow.org/events.html" style="transition-delay:.08s">
       <div>
         <h3>Looking For The Inspiring Walk?</h3>
         <p>Our community walks live at Go Inspire Now — twice a month across DFW, every $5 going straight to the mission.</p>
@@ -213,6 +208,13 @@
 
 <footer>
   <div class="ft-in">
+    <div class="ft-give">
+      <div class="ft-give-txt">
+        <span class="ft-give-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+        <p><b>Every walk, Love Box, and retreat starts with someone who gave.</b>Even $5 helps a woman feel loved, seen, and valued.</p>
+      </div>
+      <a href="donate.html" class="btn btn-give">Give Today →</a>
+    </div>
     <div class="ft-grid">
       <div class="ft-brand">
         <img src="Screenshot_2026-03-28_195930-removebg-preview.png" alt="You Inspire Now" width="76" height="70">

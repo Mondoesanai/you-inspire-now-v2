@@ -17,7 +17,7 @@
 .story{display:grid;grid-template-columns:.85fr 1.15fr;gap:6rem;align-items:start;}
 .story-photo{position:sticky;top:110px;}
 .story-photo .photo{aspect-ratio:4/5;max-width:440px;}
-.story-photo .photo img{object-position:50% 22%;}
+.story-photo .photo img{object-position:50% 30%;}
 .sig{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:var(--tx);margin-top:.4rem;}
 .sig small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tx-muted);margin-top:.4rem;}
 .heart-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:5rem;}
@@ -79,11 +79,14 @@
   <div class="blob blob-a3" style="width:600px;height:600px;top:10%;right:-200px;--bd:18s;opacity:.7;"></div>
   <div class="wrap">
     <div class="story">
-      <div class="story-photo reveal-left">
-        <!-- Swap in LeeLee's family photo here when she sends it (keep the same file size ratio, ~4:5) -->
+      <div class="story-photo with-print reveal-left">
         <figure class="photo">
-          <img src="images/leelee-resilient.jpg" alt="LeeLee, founder of You Inspire Now, smiling in a Resilient tee" width="446" height="799">
-          <div class="media-tint" aria-hidden="true"></div>
+          <img src="images/leelee-portrait.jpg" alt="LeeLee, founder of You Inspire Now, smiling as she leans against a concrete pillar" width="900" height="1298">
+        </figure>
+        <!-- images/leelee-family.jpg came in as a 320px thumbnail; drop the full-size original in under the same name for a sharper print -->
+        <figure class="family-print">
+          <img src="images/leelee-family.jpg" alt="LeeLee and her family gathered together for a family portrait" width="680" height="453" loading="lazy">
+          <figcaption>The Davis Family<small>Where it all starts</small></figcaption>
         </figure>
       </div>
       <div class="reveal-right">
@@ -213,6 +216,13 @@
 
 <footer>
   <div class="ft-in">
+    <div class="ft-give">
+      <div class="ft-give-txt">
+        <span class="ft-give-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+        <p><b>Every walk, Love Box, and retreat starts with someone who gave.</b>Even $5 helps a woman feel loved, seen, and valued.</p>
+      </div>
+      <a href="donate.html" class="btn btn-give">Give Today →</a>
+    </div>
     <div class="ft-grid">
       <div class="ft-brand">
         <img src="Screenshot_2026-03-28_195930-removebg-preview.png" alt="You Inspire Now" width="76" height="70">

@@ -21,10 +21,7 @@
 #events-preview{padding:8rem 2.5rem;}
 .ep-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:3.5rem;}
 .ep-head .section-sub{margin-bottom:0;}
-.mp-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:2rem;margin-bottom:3.5rem;}
-.mp-next{text-align:right;}
-.mp-next .k{font-size:.56rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--a1);margin-bottom:.7rem;}
-.mp-next .cd{justify-content:flex-end;margin-bottom:1.2rem;}
+#pillars{padding-bottom:3rem;}
 .home-connect-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
 .pillar-mini{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0 2.5rem;}
 .pillar-mini div{border-top:1px solid var(--line);padding-top:1rem;}
@@ -33,7 +30,7 @@
 .or-email{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid var(--line);}
 .or-email p{font-size:.88rem;color:var(--tx-body);}
 @media(max-width:1024px){.home-connect-grid{gap:3.5rem;}}
-@media(max-width:860px){.home-connect-grid{grid-template-columns:1fr;}.mp-next{text-align:left;}.mp-next .cd{justify-content:flex-start;}}
+@media(max-width:860px){.home-connect-grid{grid-template-columns:1fr;}}
 @media(max-width:600px){#events-preview{padding:5rem 1.25rem;}}
 </style>
 </head>
@@ -177,57 +174,25 @@
   </div>
 </section>
 
-<!-- THE COLLECTION — future drops, locked -->
+<!-- THE COLLECTION — one big countdown to the first drop -->
 <section id="merch-preview" class="sec sec-alt sec-line">
   <div class="blob blob-a1" style="width:600px;height:600px;top:-100px;right:-150px;--bd:15s;--bdel:-4s;"></div>
-  <div class="blob blob-a2" style="width:400px;height:400px;bottom:-80px;left:30%;--bd:18s;--bdel:-7s;"></div>
-  <div class="wrap">
-    <div class="mp-header reveal">
-      <div>
-        <div class="section-label c-a2">Wear Your Inspiration</div>
-        <h2 class="section-h">The <span class="pk">Collection.</span></h2>
-        <p class="section-sub" style="margin-bottom:0;">Evangelistic gear, released four times a year. Each collection opens for a 7-day pre-order — then it's gone. No drops have dropped yet&hellip;</p>
-      </div>
-      <div class="mp-next">
-        <div class="k">First drop · The Becoming Collection</div>
-        <div class="cd" data-countdown="2027-04-01T00:00:00-05:00" data-done="Pre-orders are open" role="timer" aria-label="Countdown to the Becoming Collection">
-          <div class="cd-u"><b data-u="d">00</b><span>Days</span></div><i>:</i>
-          <div class="cd-u"><b data-u="h">00</b><span>Hrs</span></div><i>:</i>
-          <div class="cd-u"><b data-u="m">00</b><span>Min</span></div><i>:</i>
-          <div class="cd-u"><b data-u="s">00</b><span>Sec</span></div>
-        </div>
-        <a href="shop.html" class="btn btn-ghost btn-sm">Get Drop Alerts →</a>
-      </div>
+  <div class="blob blob-a3" style="width:520px;height:520px;bottom:-60px;left:-120px;--bd:18s;--bdel:-7s;"></div>
+  <div class="wrap drop-stage reveal">
+    <div class="section-label center c-a2">Wear Your Inspiration</div>
+    <h2 class="section-h">The <span class="pk">Collection.</span></h2>
+    <p class="section-sub">Evangelistic gear, released four times a year. Each collection opens for a 7-day pre-order — then it's gone. No drops have dropped yet&hellip;</p>
+    <div class="drop-k">The first drop lands in</div>
+    <div class="cd cd-xxl" data-countdown="2027-04-01T00:00:00-05:00" data-done="The Becoming Collection is open" role="timer" aria-label="Countdown to the first drop, the Becoming Collection">
+      <div class="cd-u"><b data-u="d">00</b><span>Days</span></div><i>:</i>
+      <div class="cd-u"><b data-u="h">00</b><span>Hours</span></div><i>:</i>
+      <div class="cd-u"><b data-u="m">00</b><span>Mins</span></div><i>:</i>
+      <div class="cd-u"><b data-u="s">00</b><span>Secs</span></div>
     </div>
-    <div class="drops">
-      <a href="shop.html" class="drop reveal" style="--drop-tint:rgba(139,47,255,.6)">
-        <img class="drop-img" src="images/drop-brand-1.png" alt="" aria-hidden="true">
-        <div class="media-tint"></div><div class="media-shade"></div>
-        <div class="drop-q" aria-hidden="true">?</div>
-        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-        <div class="drop-info"><div class="drop-n">Drop 01 · April</div><div class="drop-name">The Becoming<br>Collection</div></div>
-      </a>
-      <a href="shop.html" class="drop reveal" style="--drop-tint:rgba(255,45,158,.55);transition-delay:.08s">
-        <img class="drop-img" src="images/drop-founder-1.png" alt="" aria-hidden="true">
-        <div class="media-tint"></div><div class="media-shade"></div>
-        <div class="drop-q" aria-hidden="true">?</div>
-        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-        <div class="drop-info"><div class="drop-n">Drop 02 · June</div><div class="drop-name">The Courage<br>Collection</div></div>
-      </a>
-      <a href="shop.html" class="drop reveal" style="--drop-tint:rgba(0,190,165,.55);transition-delay:.16s">
-        <img class="drop-img" src="images/drop-women-1.png" alt="" aria-hidden="true">
-        <div class="media-tint"></div><div class="media-shade"></div>
-        <div class="drop-q" aria-hidden="true">?</div>
-        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-        <div class="drop-info"><div class="drop-n">Drop 03 · August</div><div class="drop-name">The Unstoppable<br>Collection</div></div>
-      </a>
-      <a href="shop.html" class="drop reveal" style="--drop-tint:rgba(214,140,30,.55);transition-delay:.24s">
-        <img class="drop-img" src="images/drop-women-3.png" alt="" aria-hidden="true">
-        <div class="media-tint"></div><div class="media-shade"></div>
-        <div class="drop-q" aria-hidden="true">?</div>
-        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-        <div class="drop-info"><div class="drop-n">Drop 04 · October</div><div class="drop-name">The Rooted<br>Collection</div></div>
-      </a>
+    <p class="drop-cap"><b>The Becoming Collection</b> · April 1, 2027 · 7-day pre-order</p>
+    <div class="mc-btns">
+      <a href="shop.html#alerts" class="btn btn-a2" data-magnetic>Get Drop Alerts</a>
+      <a href="shop.html" class="btn btn-ghost">See The 2027 Drops</a>
     </div>
   </div>
 </section>
@@ -235,7 +200,7 @@
 <!-- FOUR PILLARS — clean white, softly engraved -->
 <section id="pillars" class="sec">
   <div class="blob blob-a2" style="width:550px;height:550px;top:-150px;left:-120px;--bd:13s;--bdel:-5s;opacity:.7;"></div>
-  <div class="blob blob-a1" style="width:500px;height:500px;bottom:-100px;right:-100px;--bd:16s;--bdel:-11s;opacity:.7;"></div>
+  <div class="blob blob-a1" style="width:500px;height:500px;top:30%;right:-140px;--bd:16s;--bdel:-11s;opacity:.6;"></div>
   <div class="wrap">
     <div class="center reveal" style="margin-bottom:4.5rem;">
       <div class="section-label center">What We Stand On</div>
@@ -274,24 +239,14 @@
   </div>
 </section>
 
-<!-- HOW WE GIVE BACK — portal into Go Inspire Now -->
+<!-- HOW WE GIVE BACK — a bright pink-and-white portal into Go Inspire Now; flows straight out of the pillars (no line, no ribbon) -->
 <section class="portal-sec" id="give-back">
-  <div class="ribbon" aria-hidden="true">
-    <div class="marquee-wrap" data-marquee data-speed="60">
-      <div class="marquee-track"><div class="mq-set">
-        <span class="mq">Go Inspire Now</span><span class="mq-star">✦</span>
-        <span class="mq">The Inspiring Walk</span><span class="mq-star">✦</span>
-        <span class="mq">Love Boxes</span><span class="mq-star">✦</span>
-        <span class="mq">Retreats</span><span class="mq-star">✦</span>
-        <span class="mq">Loved · Seen · Valued</span><span class="mq-star">✦</span>
-      </div></div>
-    </div>
-  </div>
+  <div class="rift" aria-hidden="true"><div class="rift-stars"></div></div>
   <div class="portal-in">
     <div class="portal-copy reveal-left">
-      <div class="section-label c-a2">How We Give Back</div>
+      <div class="portal-where"><i></i>How we give back</div>
       <h2 class="section-h">There's More<br>On The <span class="pk">Other Side.</span></h2>
-      <p class="lead" style="max-width:500px;margin-top:1rem;">Go Inspire Now is our nonprofit — the giveback heart of You Inspire Now. It's where we make sure every woman we encounter feels <strong style="color:var(--tx)">loved, seen, and valued.</strong></p>
+      <p class="lead" style="max-width:520px;margin-top:1rem;"><strong style="color:var(--tx)">Go Inspire Now</strong> is our nonprofit — the giveback heart of You Inspire Now. It's where we make sure every woman we encounter feels <strong style="color:var(--tx)">loved, seen, and valued.</strong> Step through the portal to see it.</p>
       <ul class="ticks">
         <li><span class="ic a2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M8 21l3-7 3 3v5M7 12l3-4 4 1 3 4"/></svg></span><div><b>The Inspiring Walk</b><span>Community walks across DFW, twice a month. Every $5 goes straight to the mission.</span></div></li>
         <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18M12 9v12M12 9S9.5 3.5 7 5.5 12 9 12 9zM12 9s2.5-5.5 5-3.5S12 9 12 9z"/></svg></span><div><b>Love Boxes</b><span>Encouragement, delivered — to women who need to feel seen.</span></div></li>
@@ -302,15 +257,18 @@
         <a href="donate.html" class="btn btn-ghost">Give</a>
       </div>
     </div>
-    <a class="portal reveal-right" href="https://www.goinspirenow.org" data-drops="#FF2D9E,#ffffff,#FF8FC8,#ffffff" aria-label="Step into Go Inspire Now (goinspirenow.org)">
+    <a class="portal reveal-right" href="https://www.goinspirenow.org" data-drops="#FF2D9E,#ffffff,#FF8FC8,#ffffff" aria-label="Step into Go Inspire Now, our nonprofit giveback (goinspirenow.org)">
       <span class="portal-stage">
         <span class="portal-glow"></span>
+        <svg class="portal-label" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="pl-gin" d="M100,100 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"/></defs><text><textPath href="#pl-gin" textLength="578" lengthAdjust="spacing">The Giveback <tspan class="dot">✦</tspan> The Inspiring Walk <tspan class="dot">✦</tspan> Love Boxes <tspan class="dot">✦</tspan> Retreats <tspan class="dot">✦</tspan> Go Inspire Now <tspan class="dot">✦</tspan> The Giveback <tspan class="dot">✦</tspan> The Inspiring Walk <tspan class="dot">✦</tspan> Love Boxes <tspan class="dot">✦</tspan> Retreats <tspan class="dot">✦</tspan> Go Inspire Now <tspan class="dot">✦</tspan> </textPath></text></svg>
         <span class="portal-ring"></span><span class="portal-ring r2"></span><span class="portal-ring r3"></span>
         <span class="portal-splat"><svg viewBox="-10 -10 220 220" aria-hidden="true" style="fill:var(--portal-splat-1)"><use href="assets/splats.svg#splatA"/></svg></span>
         <span class="portal-splat s2"><svg viewBox="-10 -10 220 220" aria-hidden="true" style="fill:var(--portal-splat-2)"><use href="assets/splats.svg#splatB"/></svg></span>
         <span class="portal-core">
+          <span class="portal-tunnel"><i></i><i></i><i></i><i></i><i></i><i></i></span>
           <span class="portal-vortex"></span>
           <img src="assets/gin-logo.png" alt="" width="417" height="546">
+          <span class="portal-kicker">The Giveback</span>
           <span class="portal-name">Go Inspire<br>Now</span>
           <span class="portal-go">Step inside →</span>
         </span>
@@ -378,6 +336,13 @@
 <!-- FOOTER -->
 <footer>
   <div class="ft-in">
+    <div class="ft-give">
+      <div class="ft-give-txt">
+        <span class="ft-give-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+        <p><b>Every walk, Love Box, and retreat starts with someone who gave.</b>Even $5 helps a woman feel loved, seen, and valued.</p>
+      </div>
+      <a href="donate.html" class="btn btn-give">Give Today →</a>
+    </div>
     <div class="ft-grid">
       <div class="ft-brand">
         <img src="Screenshot_2026-03-28_195930-removebg-preview.png" alt="You Inspire Now" width="76" height="70">

@@ -19,9 +19,15 @@
 .vault-h{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(2.4rem,5vw,4rem);letter-spacing:.06em;color:var(--tx-strong);margin-bottom:2rem;}
 .vault .cd{justify-content:center;}
 .vault-cap{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--tx-lead);margin:2rem 0 2.4rem;}
-.cal{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
-.cal .drop{aspect-ratio:3/4.4;}
-.cal .drop-info .cd{gap:.3rem;}
+.lineup{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:24px;overflow:hidden;}
+.lineup li{position:relative;padding:2.3rem 2rem 2.4rem;background:var(--card);}
+.lineup li:first-child{background:radial-gradient(130% 100% at 0% 0%,rgba(var(--a3-rgb),.26),transparent 62%),var(--card);}
+.lineup .n{display:block;font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--a1);margin-bottom:1.1rem;}
+.lineup .mo{display:block;font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,4.6vw,4.4rem);line-height:.9;letter-spacing:.02em;color:var(--tx);}
+.lineup h3{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.55rem;line-height:1.02;letter-spacing:.03em;color:var(--tx-strong);margin:1.1rem 0 .5rem;}
+.lineup p{font-size:.84rem;color:var(--tx-muted);}
+.lineup .lock{position:absolute;top:2rem;right:1.8rem;width:34px;height:34px;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;color:var(--tx-muted);}
+.lineup .lock svg{width:14px;height:14px;}
 .how{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
 .how div{padding:2.2rem;border-radius:18px;background:var(--card);border:1px solid var(--line);}
 .how b{display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:3.4rem;line-height:1;color:var(--a1);margin-bottom:.6rem;}
@@ -29,9 +35,9 @@
 .how p{font-size:.9rem;color:var(--tx-body);line-height:1.75;}
 .alerts{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
 .manifesto{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,5vw,4.4rem);line-height:.98;letter-spacing:.02em;}
-@media(max-width:1100px){.cal{grid-template-columns:1fr 1fr;}}
+@media(max-width:1100px){.lineup{grid-template-columns:1fr 1fr;}}
 @media(max-width:860px){.how{grid-template-columns:1fr;}.alerts{grid-template-columns:1fr;gap:3rem;}}
-@media(max-width:600px){.cal{gap:.8rem;}.cal .drop{aspect-ratio:3/4.8;}}
+@media(max-width:560px){.lineup{grid-template-columns:1fr;}.lineup li{padding:1.8rem 1.5rem;}}
 </style>
 </head>
 <body>
@@ -79,7 +85,7 @@
   <div class="wrap vault reveal">
     <div class="vault-k">No drops have dropped yet&hellip;</div>
     <div class="vault-h">The First Drop Lands In</div>
-    <div class="cd cd-xl" data-countdown="2027-04-01T00:00:00-05:00" data-done="The Becoming Collection is open" role="timer" aria-label="Countdown to the first drop">
+    <div class="cd cd-xxl" data-countdown="2027-04-01T00:00:00-05:00" data-done="The Becoming Collection is open" role="timer" aria-label="Countdown to the first drop">
       <div class="cd-u"><b data-u="d">00</b><span>Days</span></div><i>:</i>
       <div class="cd-u"><b data-u="h">00</b><span>Hours</span></div><i>:</i>
       <div class="cd-u"><b data-u="m">00</b><span>Mins</span></div><i>:</i>
@@ -90,7 +96,7 @@
   </div>
 </section>
 
-<!-- 2027 DROP CALENDAR -->
+<!-- 2027 DROP CALENDAR — typographic, no imagery until each drop is revealed -->
 <section class="sec sec-alt" id="drops">
   <div class="wrap">
     <div class="reveal" style="margin-bottom:3.5rem;">
@@ -98,36 +104,12 @@
       <h2 class="section-h">Four Drops.<br>One <span class="tl">Message.</span></h2>
       <p class="section-sub" style="margin-bottom:0;">Each collection stays under wraps until its countdown hits zero. Then it's open for seven days of pre-order — and that's it.</p>
     </div>
-    <div class="cal">
-      <div class="drop reveal" style="--drop-tint:rgba(139,47,255,.6)">
-        <img class="drop-img" src="images/drop-brand-1.png" alt="" aria-hidden="true">
-        <div class="media-tint"></div><div class="media-shade"></div><div class="drop-q" aria-hidden="true">?</div>
-        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-        <div class="drop-info"><div class="drop-n">Drop 01 · Spring</div><div class="drop-name">The Becoming<br>Collection</div><div class="drop-when">April 2027</div>
-          <div class="cd cd-sm" data-countdown="2027-04-01T00:00:00-05:00" data-done="Pre-order open"><div class="cd-u"><b data-u="d">00</b><span>D</span></div><div class="cd-u"><b data-u="h">00</b><span>H</span></div><div class="cd-u"><b data-u="m">00</b><span>M</span></div><div class="cd-u"><b data-u="s">00</b><span>S</span></div></div></div>
-      </div>
-      <div class="drop reveal" style="--drop-tint:rgba(255,45,158,.55);transition-delay:.08s">
-        <img class="drop-img" src="images/drop-founder-1.png" alt="" aria-hidden="true">
-        <div class="media-tint"></div><div class="media-shade"></div><div class="drop-q" aria-hidden="true">?</div>
-        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-        <div class="drop-info"><div class="drop-n">Drop 02 · Summer</div><div class="drop-name">The Courage<br>Collection</div><div class="drop-when">June 2027</div>
-          <div class="cd cd-sm" data-countdown="2027-06-01T00:00:00-05:00" data-done="Pre-order open"><div class="cd-u"><b data-u="d">00</b><span>D</span></div><div class="cd-u"><b data-u="h">00</b><span>H</span></div><div class="cd-u"><b data-u="m">00</b><span>M</span></div><div class="cd-u"><b data-u="s">00</b><span>S</span></div></div></div>
-      </div>
-      <div class="drop reveal" style="--drop-tint:rgba(0,190,165,.55);transition-delay:.16s">
-        <img class="drop-img" src="images/drop-women-1.png" alt="" aria-hidden="true">
-        <div class="media-tint"></div><div class="media-shade"></div><div class="drop-q" aria-hidden="true">?</div>
-        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-        <div class="drop-info"><div class="drop-n">Drop 03 · Late Summer</div><div class="drop-name">The Unstoppable<br>Collection</div><div class="drop-when">August 2027</div>
-          <div class="cd cd-sm" data-countdown="2027-08-01T00:00:00-05:00" data-done="Pre-order open"><div class="cd-u"><b data-u="d">00</b><span>D</span></div><div class="cd-u"><b data-u="h">00</b><span>H</span></div><div class="cd-u"><b data-u="m">00</b><span>M</span></div><div class="cd-u"><b data-u="s">00</b><span>S</span></div></div></div>
-      </div>
-      <div class="drop reveal" style="--drop-tint:rgba(214,140,30,.55);transition-delay:.24s">
-        <img class="drop-img" src="images/drop-women-3.png" alt="" aria-hidden="true">
-        <div class="media-tint"></div><div class="media-shade"></div><div class="drop-q" aria-hidden="true">?</div>
-        <div class="drop-lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-        <div class="drop-info"><div class="drop-n">Drop 04 · Fall</div><div class="drop-name">The Rooted<br>Collection</div><div class="drop-when">October 2027</div>
-          <div class="cd cd-sm" data-countdown="2027-10-01T00:00:00-05:00" data-done="Pre-order open"><div class="cd-u"><b data-u="d">00</b><span>D</span></div><div class="cd-u"><b data-u="h">00</b><span>H</span></div><div class="cd-u"><b data-u="m">00</b><span>M</span></div><div class="cd-u"><b data-u="s">00</b><span>S</span></div></div></div>
-      </div>
-    </div>
+    <ol class="lineup">
+      <li class="reveal"><span class="lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="n">Drop 01 · Spring</span><span class="mo">April</span><h3>The Becoming<br>Collection</h3><p>Opens April 1, 2027</p></li>
+      <li class="reveal" style="transition-delay:0.08s"><span class="lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="n">Drop 02 · Summer</span><span class="mo">June</span><h3>The Courage<br>Collection</h3><p>Opens June 1, 2027</p></li>
+      <li class="reveal" style="transition-delay:0.16s"><span class="lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="n">Drop 03 · Late Summer</span><span class="mo">August</span><h3>The Unstoppable<br>Collection</h3><p>Opens August 1, 2027</p></li>
+      <li class="reveal" style="transition-delay:0.24s"><span class="lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="n">Drop 04 · Fall</span><span class="mo">October</span><h3>The Rooted<br>Collection</h3><p>Opens October 1, 2027</p></li>
+    </ol>
   </div>
 </section>
 
@@ -174,6 +156,13 @@
 
 <footer>
   <div class="ft-in">
+    <div class="ft-give">
+      <div class="ft-give-txt">
+        <span class="ft-give-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+        <p><b>Every walk, Love Box, and retreat starts with someone who gave.</b>Even $5 helps a woman feel loved, seen, and valued.</p>
+      </div>
+      <a href="donate.html" class="btn btn-give">Give Today →</a>
+    </div>
     <div class="ft-grid">
       <div class="ft-brand">
         <img src="Screenshot_2026-03-28_195930-removebg-preview.png" alt="You Inspire Now" width="76" height="70">

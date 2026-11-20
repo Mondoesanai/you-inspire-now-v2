@@ -45,13 +45,17 @@
   --etch-s1:.5;--etch-s2:.35;
 
   /* The portal on YIN opens into Go Inspire Now: pink + white paint, "a splat from another dimension" */
-  --portal-sec-bg:radial-gradient(ellipse at 75% 50%,rgba(255,45,158,.16),transparent 55%),radial-gradient(ellipse at 15% 80%,rgba(139,47,255,.12),transparent 50%),#080808;
+  /* the section keeps the page's own black so it flows straight out of the pillars above — no line, no band */
+  --portal-sec-bg:var(--bg);--portal-pad:6rem;
+  --rift-bg:radial-gradient(ellipse 46% 62% at 74% 50%,rgba(255,45,158,.2),transparent 72%),radial-gradient(ellipse 40% 50% at 14% 62%,rgba(139,47,255,.13),transparent 72%);
+  --star:rgba(255,215,236,.8);--star-2:rgba(255,45,158,.95);--star-op:.5;
   --portal-glow-rgb:255,45,158;
-  --portal-ring:rgba(255,190,225,.55);
-  --portal-core-bg:radial-gradient(circle at 50% 38%,#FFFFFF 0%,#FFE4F2 42%,#FF8FC8 78%,#FF2D9E 100%);
+  --portal-ring:rgba(255,190,225,.5);
+  --portal-core-bg:radial-gradient(circle at 50% 50%,#FFFFFF 0%,#FFF4FA 24%,#FFC9E4 56%,#FF6DBA 84%,#FF2D9E 100%);
   --portal-vortex:conic-gradient(from 0deg,rgba(255,45,158,0),rgba(255,45,158,.55),rgba(255,255,255,0),rgba(255,45,158,.4),rgba(255,255,255,0),rgba(255,45,158,.55),rgba(255,45,158,0));
-  --portal-core-ink:#3A0A25;--portal-logo-filter:none;
+  --tunnel-ring:rgba(255,45,158,.5);
+  --portal-core-ink:#3A0A25;--portal-logo-filter:none;--portal-go-rgb:58,10,37;
   --portal-splat-1:#FF2D9E;--portal-splat-2:#FFFFFF;
-  --ribbon-bg:linear-gradient(90deg,#FF2D9E,#FF5FB3 50%,#FF2D9E);--ribbon-ink:#fff;--ribbon-star:#fff;--ribbon-glow:255,45,158;
+  --portal-label-ink:rgba(255,255,255,.58);--portal-label-dot:#FF2D9E;
   --sister-dot:#FF2D9E;
 }
