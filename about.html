@@ -13,7 +13,10 @@
 <link rel="stylesheet" href="assets/theme.css">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-.page-hero .hero-bg{background-image:url('images/hero.jpg');background-position:70% 20%;}
+/* her Resilient photo (not the home page one) fills the right side and fades into the dark */
+.page-hero .hero-bg{background-image:url('images/leelee-resilient-hd.jpg');left:40%;background-position:50% 18%;filter:brightness(.86) saturate(.9);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 34%);mask-image:linear-gradient(to right,transparent 0,#000 34%);}
+.page-hero .hero-overlay{background:linear-gradient(to top,#080808 0%,rgba(8,8,8,.45) 30%,transparent 58%),linear-gradient(100deg,rgba(8,8,8,.92) 0%,rgba(8,8,8,.55) 42%,transparent 70%);}
+@media(max-width:760px){.page-hero .hero-bg{left:0;background-position:50% 14%;filter:brightness(.62) saturate(.85);-webkit-mask-image:none;mask-image:none;}.page-hero .hero-overlay{background:linear-gradient(to top,#080808 0%,rgba(8,8,8,.7) 45%,rgba(8,8,8,.2) 100%);}}
 .story{display:grid;grid-template-columns:.85fr 1.15fr;gap:6rem;align-items:start;}
 .story-photo{position:sticky;top:110px;}
 .story-photo .photo{aspect-ratio:4/5;max-width:440px;}
@@ -27,13 +30,19 @@
 .hc h3{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:2rem;letter-spacing:.02em;margin-bottom:.8rem;}
 .hc p{font-size:.95rem;color:var(--tx-body);line-height:1.85;}
 .hc .tags{margin-top:1.2rem;font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--a1);}
-.gin-strip{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:center;padding:2.2rem 2.6rem;border-radius:22px;
-  background:radial-gradient(ellipse at 0% 50%,rgba(255,45,158,.22),transparent 60%),linear-gradient(120deg,#16070F,#0E0E0E);border:1px solid rgba(255,45,158,.25);}
-.gin-strip img{width:64px;height:auto;}
+/* LeeLee: the GIN logo was lost on the dark — it sits on its own white badge now, and the whole strip glows */
+.gin-strip{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:2.4rem;align-items:center;padding:2.4rem 2.8rem;border-radius:24px;overflow:hidden;
+  background:radial-gradient(ellipse 60% 120% at 0% 50%,rgba(255,45,158,.42),transparent 62%),radial-gradient(ellipse 50% 120% at 100% 50%,rgba(139,47,255,.3),transparent 60%),linear-gradient(120deg,#22081A,#120A18);
+  border:1px solid rgba(255,45,158,.45);box-shadow:0 0 0 1px rgba(255,45,158,.12),0 30px 70px -30px rgba(255,45,158,.55);transition:transform .45s cubic-bezier(.34,1.56,.64,1);}
+.gin-strip:hover{transform:translateY(-4px);}
+.gin-strip:active{transform:scale(.99);}
+.gin-strip:focus-visible{outline:2px solid var(--a1);outline-offset:4px;}
+.gin-badge{display:flex;align-items:center;justify-content:center;width:108px;height:108px;border-radius:50%;background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.08),0 0 40px rgba(255,45,158,.55);}
+.gin-badge img{width:78px;height:auto;}
 .gin-strip h3{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:2rem;line-height:1;margin-bottom:.4rem;}
 .gin-strip p{font-size:.92rem;color:var(--tx-body);line-height:1.7;}
 @media(max-width:1024px){.story{gap:3.5rem;}}
-@media(max-width:860px){.story{grid-template-columns:1fr;}.story-photo{position:static;}.story-photo .photo{max-width:100%;aspect-ratio:4/4.4;}.heart-cards{grid-template-columns:1fr;}.gin-strip{grid-template-columns:1fr;text-align:left;}}
+@media(max-width:860px){.story{grid-template-columns:1fr;}.story-photo{position:static;}.story-photo .photo{max-width:100%;aspect-ratio:4/4.4;}.heart-cards{grid-template-columns:1fr;}.gin-strip{grid-template-columns:1fr;text-align:left;padding:2rem 1.6rem;gap:1.4rem;}.gin-badge{width:88px;height:88px;}.gin-badge img{width:62px;}}
 </style>
 </head>
 <body>
@@ -84,7 +93,8 @@
           <img src="images/leelee-portrait.jpg" alt="LeeLee, founder of You Inspire Now, smiling as she leans against a concrete pillar" width="900" height="1298">
         </figure>
         <!-- images/leelee-family.jpg came in as a 320px thumbnail; drop the full-size original in under the same name for a sharper print -->
-        <figure class="family-print">
+        <figure class="family-print" data-zoom aria-label="See the Davis family photo full screen">
+          <span class="zoom-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
           <img src="images/leelee-family.jpg" alt="LeeLee and her family gathered together for a family portrait" width="680" height="453" loading="lazy">
           <figcaption>The Davis Family<small>Where it all starts</small></figcaption>
         </figure>
@@ -99,8 +109,8 @@
         </div>
         <p class="pull">"What I found on the other side of surrender, I needed to pass on. No woman should have to find her way through the dark alone."</p>
         <div class="prose">
-          <p>You Inspire Now was born from that place — not as a polished program, but as a personal mission. It's why we gather. It's why we take women outside their comfort zones on adventures like the Adventure Odyssey. And it's why I'll keep calling out the greatness I see in you until you see it too.</p>
-          <p>Because I know what it feels like to go unseen, we also give back through <a href="https://www.goinspirenow.org" style="color:var(--a2);font-weight:600;">Go Inspire Now</a> — walking beside women across DFW so that every woman we encounter feels loved, seen, and valued.</p>
+          <p>You Inspire Now was born from that place — not as a polished program, but as a personal mission. It's why we gather. It's why we take women outside their comfort zones on adventures like the Adventure Odyssey. And it's why I'll keep calling out the greatness I see in you until you see it too — and until you have the boldness to step into the many other areas, the many other possibilities, God is calling you to.</p>
+          <p>Because I know what it feels like to feel unseen and unvalued, we also give back through <a href="https://www.goinspirenow.org" style="color:var(--a2);font-weight:600;">Go Inspire Now</a> — walking beside women so that every woman we encounter feels loved, seen, and valued.</p>
         </div>
         <div class="sig">— LeeLee<small>Founder, You Inspire Now &amp; Go Inspire Now</small></div>
         <div class="hero-btns" style="margin-top:2.4rem;">
@@ -181,7 +191,7 @@
       </div>
       <div class="etch t-lav reveal" style="transition-delay:.16s">
         <h3 class="etch-name sm">Women Ready To Step Into Their Fullness</h3>
-        <p class="etch-desc">Healing from shame, abandonment, or past wounds — finding truth, freedom, and the courage to move forward into who God has called you to be.</p>
+        <p class="etch-desc">Healing from shame, past wounds, or imposter syndrome — finding true freedom and the courage to move forward into who God has called you to be.</p>
       </div>
       <div class="etch t-butter reveal" style="transition-delay:.24s">
         <h3 class="etch-name sm">Women Drawn To Faith &amp; Purpose</h3>
@@ -190,10 +200,10 @@
     </div>
 
     <a class="gin-strip reveal" href="https://www.goinspirenow.org" style="margin-top:4rem;text-decoration:none;color:inherit;">
-      <img src="assets/gin-logo.png" alt="" width="417" height="546">
+      <span class="gin-badge"><img src="assets/gin-logo.png" alt="" width="480" height="520"></span>
       <div>
         <h3>How We Give Back: <span style="color:var(--a2)">Go Inspire Now</span></h3>
-        <p>Our nonprofit walks beside women across DFW — the Inspiring Walk, Love Boxes, and retreats — so every woman we encounter feels loved, seen, and valued.</p>
+        <p>Our nonprofit walks beside women — Love Walks, the Inspiring Walk 25K, Love Boxes, and Freedom Retreats — so every woman we encounter feels loved, seen, and valued.</p>
       </div>
       <span class="btn btn-a2 btn-sm">Visit ↗</span>
     </a>
@@ -219,7 +229,7 @@
     <div class="ft-give">
       <div class="ft-give-txt">
         <span class="ft-give-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
-        <p><b>Every walk, Love Box, and retreat starts with someone who gave.</b>Even $5 helps a woman feel loved, seen, and valued.</p>
+        <p><b>Every walk, Love Box, and event starts with someone who gave.</b>Even $5 helps a woman feel loved, seen, and valued.</p>
       </div>
       <a href="donate.html" class="btn btn-give">Give Today →</a>
     </div>
@@ -231,7 +241,7 @@
       </div>
       <div class="ft-col"><h4>Navigate</h4><div class="ft-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="events.html">Events</a><a href="shop.html">Shop</a><a href="contact.html">Connect</a></div></div>
       <div class="ft-col"><h4>Experiences</h4><div class="ft-links"><a href="events.html#adventure">Adventure Odyssey</a><a href="events.html#future">Extreme Marriage Challenge<span class="soon">Soon</span></a><a href="shop.html">The 2027 Drops</a></div></div>
-      <div class="ft-col"><h4>Give Back</h4><div class="ft-links"><a href="donate.html">Give</a><a href="https://www.goinspirenow.org/events.html">The Inspiring Walk ↗</a><a href="https://www.goinspirenow.org/love-boxes.html">Love Boxes ↗</a><a href="contact.html">Contact Us</a></div></div>
+      <div class="ft-col"><h4>Give Back</h4><div class="ft-links"><a href="donate.html">Give</a><a href="https://www.goinspirenow.org/events.html">Love Walks ↗</a><a href="https://www.goinspirenow.org/love-boxes.html">Love Boxes ↗</a><a href="contact.html">Contact Us</a></div></div>
     </div>
     <div class="ft-bot"><p class="ft-copy">© <span data-year>2026</span> You Inspire Now. All Rights Reserved.</p><p class="ft-copy">There Is More Within · Gifted · Purposed · Be-YOU-tiful</p></div>
   </div>

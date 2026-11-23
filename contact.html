@@ -14,7 +14,10 @@
 <link rel="stylesheet" href="assets/site.css">
 <style>
 .page-hero{min-height:66vh;}
-.page-hero .hero-bg{background-image:url('images/hero.jpg');background-position:75% 25%;}
+/* her Unstoppable photo — pointing right at you — fills the right side */
+.page-hero .hero-bg{background-image:url('images/leelee-unstoppable-hd.jpg');left:42%;background-position:50% 20%;filter:brightness(.86) saturate(.9);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 34%);mask-image:linear-gradient(to right,transparent 0,#000 34%);}
+.page-hero .hero-overlay{background:linear-gradient(to top,#080808 0%,rgba(8,8,8,.45) 30%,transparent 58%),linear-gradient(100deg,rgba(8,8,8,.92) 0%,rgba(8,8,8,.55) 42%,transparent 70%);}
+@media(max-width:760px){.page-hero .hero-bg{left:0;background-position:50% 16%;filter:brightness(.62) saturate(.85);-webkit-mask-image:none;mask-image:none;}.page-hero .hero-overlay{background:linear-gradient(to top,#080808 0%,rgba(8,8,8,.7) 45%,rgba(8,8,8,.2) 100%);}}
 .cgrid{display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:start;}
 .side{display:flex;flex-direction:column;gap:1.2rem;}
 .sbox{padding:2rem;border-radius:18px;background:var(--card);border:1px solid var(--line);}
@@ -67,7 +70,7 @@
   </div>
 </section>
 
-<section class="sec sec-line">
+<section class="sec sec-line" id="form">
   <div class="blob blob-a3" style="width:600px;height:600px;top:-150px;left:-200px;--bd:17s;opacity:.6;"></div>
   <div class="blob blob-a2" style="width:500px;height:500px;bottom:-150px;right:-150px;--bd:15s;opacity:.5;"></div>
   <div class="wrap cgrid">
@@ -125,13 +128,6 @@
         <a class="btn btn-ghost btn-block" href="#" data-mailto data-subject="Hello from youinspirenow.com">Email Us</a>
       </div>
       <div class="sbox">
-        <div class="k" style="color:var(--a2)">Our Two Homes</div>
-        <div class="site-links">
-          <a href="index.html"><span>You Inspire Now</span><small>The ministry</small></a>
-          <a href="https://www.goinspirenow.org"><span>Go Inspire Now ↗</span><small>Our giveback</small></a>
-        </div>
-      </div>
-      <div class="sbox">
         <div class="k" style="color:var(--a4)">Speaking &amp; Ministry Requests</div>
         <p>For speaking engagements, partnerships, or ministry collaborations, choose "Speaking Engagement" in the form. We respond within 48–72 hours.</p>
         <p style="font-size:.82rem;color:var(--tx-muted)">Our social pages are getting a fresh start — links are coming soon.</p>
@@ -146,7 +142,7 @@
     <div class="ft-give">
       <div class="ft-give-txt">
         <span class="ft-give-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
-        <p><b>Every walk, Love Box, and retreat starts with someone who gave.</b>Even $5 helps a woman feel loved, seen, and valued.</p>
+        <p><b>Every walk, Love Box, and event starts with someone who gave.</b>Even $5 helps a woman feel loved, seen, and valued.</p>
       </div>
       <a href="donate.html" class="btn btn-give">Give Today →</a>
     </div>
@@ -158,7 +154,7 @@
       </div>
       <div class="ft-col"><h4>Navigate</h4><div class="ft-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="events.html">Events</a><a href="shop.html">Shop</a><a href="contact.html">Connect</a></div></div>
       <div class="ft-col"><h4>Experiences</h4><div class="ft-links"><a href="events.html#adventure">Adventure Odyssey</a><a href="events.html#future">Extreme Marriage Challenge<span class="soon">Soon</span></a><a href="shop.html">The 2027 Drops</a></div></div>
-      <div class="ft-col"><h4>Give Back</h4><div class="ft-links"><a href="donate.html">Give</a><a href="https://www.goinspirenow.org/events.html">The Inspiring Walk ↗</a><a href="https://www.goinspirenow.org/love-boxes.html">Love Boxes ↗</a><a href="contact.html">Contact Us</a></div></div>
+      <div class="ft-col"><h4>Give Back</h4><div class="ft-links"><a href="donate.html">Give</a><a href="https://www.goinspirenow.org/events.html">Love Walks ↗</a><a href="https://www.goinspirenow.org/love-boxes.html">Love Boxes ↗</a><a href="contact.html">Contact Us</a></div></div>
     </div>
     <div class="ft-bot"><p class="ft-copy">© <span data-year>2026</span> You Inspire Now. All Rights Reserved.</p><p class="ft-copy">There Is More Within · Gifted · Purposed · Be-YOU-tiful</p></div>
   </div>

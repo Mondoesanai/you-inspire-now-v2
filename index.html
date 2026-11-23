@@ -23,6 +23,24 @@
 .ep-head .section-sub{margin-bottom:0;}
 #pillars{padding-bottom:3rem;}
 .home-connect-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+/* Voices of Resilience: copy + notify form on the left, a podcast "cover" on the right */
+.voices{display:grid;grid-template-columns:1.05fr .95fr;gap:5rem;align-items:center;}
+.voices-panel{padding:1.6rem;}
+.voices-links{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.2rem;}
+.voices-cover{position:relative;aspect-ratio:1/1;border-radius:26px;overflow:hidden;isolation:isolate;
+  box-shadow:0 0 0 1px rgba(255,255,255,.08),0 40px 90px -40px rgba(255,45,158,.6),0 30px 60px -30px rgba(139,47,255,.5);transform:rotate(-1.5deg);}
+.voices-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:saturate(.85);}
+.vc-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,.95) 0%,rgba(8,8,8,.55) 38%,transparent 65%),radial-gradient(ellipse at 100% 0%,rgba(255,45,158,.35),transparent 55%);mix-blend-mode:normal;}
+.vc-top{position:absolute;top:1.4rem;left:1.5rem;display:flex;align-items:center;gap:.55rem;font-size:.6rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#fff;}
+.vc-dot{width:8px;height:8px;border-radius:50%;background:var(--a1);animation:live 1.8s ease-out infinite;}
+.vc-title{position:absolute;left:1.5rem;bottom:4.6rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,5vw,4rem);line-height:.88;color:#fff;letter-spacing:.01em;}
+.vc-title b{font-weight:400;color:var(--a1);}
+.vc-wave{position:absolute;left:1.5rem;right:1.5rem;bottom:2.4rem;height:28px;display:flex;align-items:center;gap:4px;}
+.vc-wave i{flex:1;height:100%;border-radius:3px;background:linear-gradient(to top,var(--a1),var(--a2));transform-origin:50% 50%;animation:vc-bar 1.4s ease-in-out infinite;}
+.vc-wave i:nth-child(3n){animation-delay:-.4s;} .vc-wave i:nth-child(3n+1){animation-delay:-.9s;} .vc-wave i:nth-child(4n){animation-delay:-.2s;animation-duration:1.1s;} .vc-wave i:nth-child(5n){animation-delay:-1.1s;animation-duration:1.7s;}
+@keyframes vc-bar{0%,100%{transform:scaleY(.25);}50%{transform:scaleY(1);}}
+.vc-ep{position:absolute;left:1.5rem;bottom:1rem;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+@media(max-width:960px){.voices{grid-template-columns:1fr;gap:3rem;}.voices-cover{max-width:460px;transform:none;}}
 .pillar-mini{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0 2.5rem;}
 .pillar-mini div{border-top:1px solid var(--line);padding-top:1rem;}
 .pillar-mini b{display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:2rem;}
@@ -248,9 +266,9 @@
       <h2 class="section-h">There's More<br>On The <span class="pk">Other Side.</span></h2>
       <p class="lead" style="max-width:520px;margin-top:1rem;"><strong style="color:var(--tx)">Go Inspire Now</strong> is our nonprofit — the giveback heart of You Inspire Now. It's where we make sure every woman we encounter feels <strong style="color:var(--tx)">loved, seen, and valued.</strong> Step through the portal to see it.</p>
       <ul class="ticks">
-        <li><span class="ic a2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M8 21l3-7 3 3v5M7 12l3-4 4 1 3 4"/></svg></span><div><b>The Inspiring Walk</b><span>Community walks across DFW, twice a month. Every $5 goes straight to the mission.</span></div></li>
+        <li><span class="ic a2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M8 21l3-7 3 3v5M7 12l3-4 4 1 3 4"/></svg></span><div><b>Love Walks &amp; The Inspiring Walk 25K</b><span>Walks twice a month, plus our big 25K every September. A suggested $5 goes straight to the mission.</span></div></li>
         <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18M12 9v12M12 9S9.5 3.5 7 5.5 12 9 12 9zM12 9s2.5-5.5 5-3.5S12 9 12 9z"/></svg></span><div><b>Love Boxes</b><span>Encouragement, delivered — to women who need to feel seen.</span></div></li>
-        <li><span class="ic a3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l7-12 4 6 2-3 5 9H3z"/><circle cx="17" cy="6" r="2"/></svg></span><div><b>Retreats</b><span>Small getaways to rest, reconnect, and remember who you're called to be.</span></div></li>
+        <li><span class="ic a3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l7-12 4 6 2-3 5 9H3z"/><circle cx="17" cy="6" r="2"/></svg></span><div><b>Freedom Retreats</b><span>Time away with the Lord — fun, challenges, and a glimpse of what you're really made of.</span></div></li>
       </ul>
       <div class="btns">
         <a href="https://www.goinspirenow.org" class="btn btn-a2" data-magnetic>Step Into Go Inspire Now →</a>
@@ -260,7 +278,7 @@
     <a class="portal reveal-right" href="https://www.goinspirenow.org" data-drops="#FF2D9E,#ffffff,#FF8FC8,#ffffff" aria-label="Step into Go Inspire Now, our nonprofit giveback (goinspirenow.org)">
       <span class="portal-stage">
         <span class="portal-glow"></span>
-        <svg class="portal-label" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="pl-gin" d="M100,100 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"/></defs><text><textPath href="#pl-gin" textLength="578" lengthAdjust="spacing">The Giveback <tspan class="dot">✦</tspan> The Inspiring Walk <tspan class="dot">✦</tspan> Love Boxes <tspan class="dot">✦</tspan> Retreats <tspan class="dot">✦</tspan> Go Inspire Now <tspan class="dot">✦</tspan> The Giveback <tspan class="dot">✦</tspan> The Inspiring Walk <tspan class="dot">✦</tspan> Love Boxes <tspan class="dot">✦</tspan> Retreats <tspan class="dot">✦</tspan> Go Inspire Now <tspan class="dot">✦</tspan> </textPath></text></svg>
+        <svg class="portal-label" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="pl-gin" d="M100,100 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"/></defs><text><textPath href="#pl-gin" textLength="578" lengthAdjust="spacing">The Giveback <tspan class="dot">✦</tspan> Love Walks <tspan class="dot">✦</tspan> Love Boxes <tspan class="dot">✦</tspan> Freedom Retreats <tspan class="dot">✦</tspan> Go Inspire Now <tspan class="dot">✦</tspan> The Giveback <tspan class="dot">✦</tspan> Love Walks <tspan class="dot">✦</tspan> Love Boxes <tspan class="dot">✦</tspan> Freedom Retreats <tspan class="dot">✦</tspan> Go Inspire Now <tspan class="dot">✦</tspan> </textPath></text></svg>
         <span class="portal-ring"></span><span class="portal-ring r2"></span><span class="portal-ring r3"></span>
         <span class="portal-splat"><svg viewBox="-10 -10 220 220" aria-hidden="true" style="fill:var(--portal-splat-1)"><use href="assets/splats.svg#splatA"/></svg></span>
         <span class="portal-splat s2"><svg viewBox="-10 -10 220 220" aria-hidden="true" style="fill:var(--portal-splat-2)"><use href="assets/splats.svg#splatB"/></svg></span>
@@ -315,7 +333,39 @@
   </div>
 </section>
 
-<!-- VOICES OF RESILIENCE — hidden until the YouTube channel link is ready (see HANDOFF notes) -->
+<!-- VOICES OF RESILIENCE — LeeLee (Nov 23) wants it on the site. Honest "coming soon" until the YouTube link exists:
+     put the link in assets/config.js (voicesUrl) and the "Watch on YouTube" button appears on its own. -->
+<section id="voices" class="sec sec-alt sec-line">
+  <div class="blob blob-a2" style="width:600px;height:600px;top:-160px;right:-180px;--bd:17s;opacity:.55;"></div>
+  <div class="wrap voices">
+    <div class="reveal-left">
+      <div class="section-label">The Podcast · Coming Soon</div>
+      <h2 class="section-h">Voices Of<br><span class="pk">Resilience.</span></h2>
+      <p class="lead" style="margin:1.2rem 0 1.6rem;">Real women. Real stories. Real faith. Voices of Resilience sits down with women who chose to rise — through loss, doubt, and everything in between — so you can hear what's possible on the other side.</p>
+      <div class="panel voices-panel" data-form-wrap>
+        <form class="f" data-form="Voices of Resilience — Notify Me">
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="f-row"><label>First name<input type="text" name="First name" required autocomplete="given-name"></label><label>Email<input type="email" name="Email" required autocomplete="email"></label></div>
+          <button type="submit" class="btn btn-a1 btn-block">Tell Me When It Drops →</button>
+        </form>
+        <div class="f-done" role="status"><b>You'll hear it first.</b><p>We'll email you the moment the first episode of Voices of Resilience is live.</p></div>
+        <div class="f-fallback" role="alert">That didn't send. <a href="#">Send it as an email instead →</a></div>
+      </div>
+      <div class="voices-links">
+        <a href="#" class="btn btn-a2 btn-sm" data-voices-link hidden target="_blank" rel="noopener">Watch On YouTube ↗</a>
+        <a href="contact.html?topic=Share%20a%20Testimony#form" class="btn btn-ghost btn-sm">Have A Story? Share It →</a>
+      </div>
+    </div>
+    <div class="voices-cover reveal-right" aria-hidden="true">
+      <img src="images/voices-cover.jpg" alt="" width="900" height="947" loading="lazy">
+      <div class="vc-shade"></div>
+      <div class="vc-top"><span class="vc-dot"></span>You Inspire Now Presents</div>
+      <div class="vc-title">Voices Of<br><b>Resilience</b></div>
+      <div class="vc-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="vc-ep">Episode 01 · Coming soon</div>
+    </div>
+  </div>
+</section>
 
 <!-- MISSION CTA -->
 <section id="mission-cta">
@@ -339,7 +389,7 @@
     <div class="ft-give">
       <div class="ft-give-txt">
         <span class="ft-give-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
-        <p><b>Every walk, Love Box, and retreat starts with someone who gave.</b>Even $5 helps a woman feel loved, seen, and valued.</p>
+        <p><b>Every walk, Love Box, and event starts with someone who gave.</b>Even $5 helps a woman feel loved, seen, and valued.</p>
       </div>
       <a href="donate.html" class="btn btn-give">Give Today →</a>
     </div>
@@ -351,7 +401,7 @@
       </div>
       <div class="ft-col"><h4>Navigate</h4><div class="ft-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="events.html">Events</a><a href="shop.html">Shop</a><a href="contact.html">Connect</a></div></div>
       <div class="ft-col"><h4>Experiences</h4><div class="ft-links"><a href="events.html#adventure">Adventure Odyssey</a><a href="events.html#future">Extreme Marriage Challenge<span class="soon">Soon</span></a><a href="shop.html">The 2027 Drops</a></div></div>
-      <div class="ft-col"><h4>Give Back</h4><div class="ft-links"><a href="donate.html">Give</a><a href="https://www.goinspirenow.org/events.html">The Inspiring Walk ↗</a><a href="https://www.goinspirenow.org/love-boxes.html">Love Boxes ↗</a><a href="contact.html">Contact Us</a></div></div>
+      <div class="ft-col"><h4>Give Back</h4><div class="ft-links"><a href="donate.html">Give</a><a href="https://www.goinspirenow.org/events.html">Love Walks ↗</a><a href="https://www.goinspirenow.org/love-boxes.html">Love Boxes ↗</a><a href="contact.html">Contact Us</a></div></div>
     </div>
     <div class="ft-bot"><p class="ft-copy">© <span data-year>2026</span> You Inspire Now. All Rights Reserved.</p><p class="ft-copy">There Is More Within · Gifted · Purposed · Be-YOU-tiful</p></div>
   </div>
