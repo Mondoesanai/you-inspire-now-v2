@@ -12,12 +12,20 @@
 <link rel="icon" href="Screenshot_2026-03-28_195930-removebg-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/theme.css">
 <link rel="stylesheet" href="assets/site.css">
 <script>try{if(sessionStorage.getItem('yin-intro-seen'))document.documentElement.classList.add('js-intro-seen')}catch(e){}</script>
 <style>
-#hero .hero-bg{background-image:url('images/hero.jpg');}
+/* her "Inspired." shirt photo stands on the right and fades into the dark; the headline keeps the clean left side.
+   (small original — enlarged naturally; swap in the full-size file under a NEW name when she sends it: images are cached 7 days) */
+#hero .hero-bg{background-image:url('images/leelee-inspired-shirt.jpg');left:46%;background-position:50% 12%;filter:brightness(.92) saturate(.95);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 28%);mask-image:linear-gradient(to right,transparent 0,#000 28%);}
+#hero .hero-overlay{background:linear-gradient(to top,rgba(8,8,8,.92) 0%,rgba(8,8,8,.3) 24%,transparent 46%),linear-gradient(100deg,rgba(8,8,8,.9) 0%,rgba(8,8,8,.45) 40%,transparent 62%);}
+@media(max-width:760px){
+  #hero{padding-top:54svh;}
+  #hero .hero-bg{left:0;bottom:auto;height:62svh;background-position:50% 16%;filter:none;transform:none;-webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent 100%);mask-image:linear-gradient(to bottom,#000 60%,transparent 100%);}
+  #hero .hero-overlay{background:linear-gradient(to bottom,transparent 0,transparent 38svh,rgba(8,8,8,.8) 56svh,#080808 66svh);}
+}
 #events-preview{padding:8rem 2.5rem;}
 .ep-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:3.5rem;}
 .ep-head .section-sub{margin-bottom:0;}
@@ -119,9 +127,9 @@
   <div class="marquee-track">
     <div class="mq-set">
       <span class="mq">There Is More Within</span><span class="mq-star" aria-hidden="true">✦</span>
-      <span class="mq outline">You Are Changing The World</span><span class="mq-star" aria-hidden="true">✦</span>
+      <span class="mq">You Are Changing The World</span><span class="mq-star" aria-hidden="true">✦</span>
       <span class="mq">Calling Out The Greatness Within</span><span class="mq-star" aria-hidden="true">✦</span>
-      <span class="mq outline">It's Time To Spread Your Wings</span><span class="mq-star" aria-hidden="true">✦</span>
+      <span class="mq">It's Time To Spread Your Wings</span><span class="mq-star" aria-hidden="true">✦</span>
     </div>
   </div>
 </div>
@@ -357,7 +365,7 @@
       </div>
     </div>
     <div class="voices-cover reveal-right" aria-hidden="true">
-      <img src="images/voices-cover.jpg" alt="" width="900" height="947" loading="lazy">
+      <img src="images/voices-cover-2.jpg" alt="" width="900" height="947" loading="lazy">
       <div class="vc-shade"></div>
       <div class="vc-top"><span class="vc-dot"></span>You Inspire Now Presents</div>
       <div class="vc-title">Voices Of<br><b>Resilience</b></div>

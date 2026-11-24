@@ -9,19 +9,19 @@
 <link rel="icon" href="Screenshot_2026-03-28_195930-removebg-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/theme.css">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-/* her Resilient photo (not the home page one) fills the right side and fades into the dark */
-.page-hero .hero-bg{background-image:url('images/leelee-resilient-hd.jpg');left:40%;background-position:50% 18%;filter:brightness(.86) saturate(.9);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 34%);mask-image:linear-gradient(to right,transparent 0,#000 34%);}
+/* her blazer photo (the one that used to lead the home page) fills the right side and fades into the dark */
+.page-hero .hero-bg{background-image:url('images/hero.jpg');left:36%;background-position:62% 30%;filter:brightness(.86) saturate(.9);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 34%);mask-image:linear-gradient(to right,transparent 0,#000 34%);}
 .page-hero .hero-overlay{background:linear-gradient(to top,#080808 0%,rgba(8,8,8,.45) 30%,transparent 58%),linear-gradient(100deg,rgba(8,8,8,.92) 0%,rgba(8,8,8,.55) 42%,transparent 70%);}
 @media(max-width:760px){.page-hero .hero-bg{left:0;background-position:50% 14%;filter:brightness(.62) saturate(.85);-webkit-mask-image:none;mask-image:none;}.page-hero .hero-overlay{background:linear-gradient(to top,#080808 0%,rgba(8,8,8,.7) 45%,rgba(8,8,8,.2) 100%);}}
 .story{display:grid;grid-template-columns:.85fr 1.15fr;gap:6rem;align-items:start;}
 .story-photo{position:sticky;top:110px;}
 .story-photo .photo{aspect-ratio:4/5;max-width:440px;}
 .story-photo .photo img{object-position:50% 30%;}
-.sig{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:var(--tx);margin-top:.4rem;}
+.sig{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.03em;color:var(--tx);margin-top:.4rem;}
 .sig small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tx-muted);margin-top:.4rem;}
 .heart-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:5rem;}
 .hc{border-radius:20px;padding:2.4rem;background:var(--card);border:1px solid var(--line);}
@@ -90,12 +90,12 @@
     <div class="story">
       <div class="story-photo with-print reveal-left">
         <figure class="photo">
-          <img src="images/leelee-portrait.jpg" alt="LeeLee, founder of You Inspire Now, smiling as she leans against a concrete pillar" width="900" height="1298">
+          <img src="images/leelee-portrait-2.jpg" alt="LeeLee, founder of You Inspire Now, smiling as she leans against a concrete pillar" width="1200" height="1731">
         </figure>
-        <!-- images/leelee-family.jpg came in as a 320px thumbnail; drop the full-size original in under the same name for a sharper print -->
+        <!-- the full-size family photo she sent Nov 24; tap opens it full screen (site.js [data-zoom]) -->
         <figure class="family-print" data-zoom aria-label="See the Davis family photo full screen">
           <span class="zoom-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
-          <img src="images/leelee-family.jpg" alt="LeeLee and her family gathered together for a family portrait" width="680" height="453" loading="lazy">
+          <img src="images/leelee-family-full.jpg" alt="LeeLee and her family gathered together for a family portrait" width="1800" height="1200" loading="lazy">
           <figcaption>The Davis Family<small>Where it all starts</small></figcaption>
         </figure>
       </div>

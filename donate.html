@@ -9,17 +9,20 @@
 <link rel="icon" href="Screenshot_2026-03-28_195930-removebg-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/theme.css">
 <link rel="stylesheet" href="assets/site.css">
 <style>
 .page-hero{min-height:84vh;}
-.page-hero .hero-bg{background-image:url('images/give-hero.jpg');background-position:center 55%;}
+/* two friends laughing on a walk (Pexels 4299372) stand to the right of the headline */
+.page-hero .hero-bg{background-image:url('images/give-hero-2.jpg');left:38%;background-position:50% 30%;filter:brightness(.78) saturate(.92);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 30%);mask-image:linear-gradient(to right,transparent 0,#000 30%);}
+.page-hero .hero-overlay{background:linear-gradient(to top,#080808 0%,rgba(8,8,8,.45) 30%,transparent 58%),linear-gradient(100deg,rgba(8,8,8,.92) 0%,rgba(8,8,8,.55) 42%,transparent 70%);}
+@media(max-width:760px){.page-hero .hero-bg{left:0;background-position:50% 26%;filter:brightness(.6) saturate(.88);-webkit-mask-image:none;mask-image:none;}.page-hero .hero-overlay{background:linear-gradient(to top,#080808 0%,rgba(8,8,8,.7) 45%,rgba(8,8,8,.2) 100%);}}
 .leelee .photo{aspect-ratio:4/5;max-width:460px;}
 .leelee .photo img{object-position:50% 25%;}
-.quote-big{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.5;color:var(--tx);margin:1.4rem 0 1.2rem;}
+.quote-big{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(1.25rem,2vw,1.6rem);line-height:1.55;color:var(--tx);margin:1.4rem 0 1.2rem;}
 .quote-by{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--a2);margin-bottom:2rem;}
-.scripture{max-width:760px;margin:0 auto 5rem;text-align:center;font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;line-height:1.8;color:var(--tx-lead);}
+.scripture{max-width:760px;margin:0 auto 5rem;text-align:center;font-family:'Inter',sans-serif;font-weight:500;font-size:1.08rem;line-height:1.8;color:var(--tx-lead);}
 .scripture b{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--a1);margin-top:1rem;}
 .secure{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:2rem;font-size:.82rem;color:var(--tx-muted);}
 .secure svg{width:15px;height:15px;}
@@ -102,7 +105,7 @@
   <div class="blob blob-a2" style="width:600px;height:600px;bottom:-200px;right:-150px;--bd:16s;opacity:.6;"></div>
   <div class="wrap split">
     <figure class="photo reveal-left">
-      <img src="images/leelee-inspired-hd.jpg" alt="LeeLee, founder, wearing an Inspired tee" width="595" height="1200">
+      <img src="images/leelee-resilient-shirt.jpg" alt="LeeLee, founder, wearing a Resilient tee" width="893" height="1600">
       <div class="media-tint" aria-hidden="true"></div>
     </figure>
     <div class="reveal-right">
